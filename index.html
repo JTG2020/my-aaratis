@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarati Sangrah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Mukta', sans-serif;
+            background-color: #fce4b2; /* A soft, light orange */
+            color: #4b3f33; /* Dark brown text for contrast */
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lord_Ganesha_silhouette.svg/1024px-Lord_Ganesha_silhouette.svg.png');
+            background-repeat: repeat;
+            background-size: 100px; /* Smaller watermark for mobile */
+            opacity: 0.15; /* Subtle watermark */
+            z-index: -1; /* Puts the watermark behind the content */
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #fffaf0; /* Off-white container for readability */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1; /* Ensures content is above the watermark */
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #d84315; /* Saffron/orange heading color */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .aarati {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff8f5; /* Lighter off-white section background */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .aarati h2, .prayer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            color: #d84315; /* Saffron/orange heading color */
+            text-align: center;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ffcc80; /* Lighter orange border */
+        }
+        .aarati p, .prayer p {
+            font-size: 1.1em;
+            text-align: left;
+            margin: 0;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        .devanagari, .tamil-text, .telugu-text, .kannada-text {
+            font-size: 1.4em;
+            color: #5d4037; /* Darker brown for main text */
+            font-weight: 700;
+        }
+        .english {
+            font-style: italic;
+            color: #9c6c44; /* Tan/gold color */
+            margin-top: 5px;
+            text-align: left; /* Explicitly align English text left */
+        }
+        .separator {
+            text-align: center;
+            color: #ffbb77;
+            font-size: 2em;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+        .prayer {
+            padding: 15px;
+            background-color: #fff8f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .toc {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            color: #d84315;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .toc li {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #4b3f33;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        .toc a:hover {
+            color: #d84315;
+            text-decoration: underline;
+        }
+        .go-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .go-to-top a {
+            color: #d84315;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffcc80;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            background-color: #fff8f5;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4b3f33;
+            border-radius: 8px 8px 0 0;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+        }
+        .tab-button.active {
+            background-color: #ffcc80;
+            color: #d84315;
+            border-bottom: 2px solid #d84315;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tamil-text-container, .telugu-text-container, .kannada-text-container {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="top">
+        <h1>Aarati Sangrah</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('marathi')">मराठी/हिंदी/English</button>
+            <button class="tab-button" onclick="openTab('tamil')">தமிழ்</button>
+            <button class="tab-button" onclick="openTab('telugu')">తెలుగు</button>
+            <button class="tab-button" onclick="openTab('kannada')">ಕನ್ನಡ</button>
+        </div>
+
+        <div id="marathi" class="tab-content active">
+            <div class="toc">
+                <h2>अनुक्रमणिका</h2>
+                <ul>
+                    <li><a href="#marathi_ganesh_marathi">गणपतीची आरती</a></li>
+                    <li><a href="#marathi_shankar">शंकराची आरती</a></li>
+                    <li><a href="#marathi_durga">दुर्गा देवीची आरती</a></li>
+                    <li><a href="#marathi_vitthoba">विठोबाची आरती</a></li>
+                    <li><a href="#marathi_dnyanray">ज्ञानरायाची आरती</a></li>
+                    <li><a href="#marathi_ganesh_hindi">गणेशजी की आरती</a></li>
+                    <li><a href="#marathi_ghalin_lotangan">घालीन लोटांगण</a></li>
+                    <li><a href="#marathi_karpur_gauram">कर्पूर गौरं</a></li>
+                    <li><a href="#marathi_mantra_pushpanjali">मंत्रपुष्पांजलि</a></li>
+                </ul>
+            </div>
+
+            <div class="aarati">
+                <h2 id="marathi_ganesh_marathi">॥ श्री गणपतीची आरती ॥</h2>
+                <p class="devanagari">
+                    सुखकर्ता दुःखहर्ता वार्ता विघ्नाची।
+                    नुरवी पुरवी प्रेम कृपा जयाची।
+                    सर्वांगी सुन्दर उटि शेंदुराची।
+                    कण्ठी झळके माळ मुक्ताफळांची॥
+                </p>
+                <p class="english">
+                    Sukhakarta Dukhharta Varta Vighnachi.
+                    Nuravi Puravi Prema Krupa Jayachi.
+                    Sarvangi Sundar Uti Shendurachi.
+                    Kanthi Jhalke Mala Muktaphalanchi॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय मंगलमूर्ति।
+                    दर्शनमात्रे मनकामना पुरती॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="devanagari">
+                    रत्नखचित फरा तुज गौरीकुमरा।
+                    चन्दनाची उटि कुंकुमकेशरा।
+                    हिरे जड़ित मुकुट शोभतो बरा।
+                    रुणझुणती नूपुरे चरणी घागरिया॥
+                </p>
+                <p class="english">
+                    Ratnakhachit Phara Tuj Gaurikumara.
+                    Chandanachi Uti Kunkumakeshara.
+                    Hire Jadit Mukut Shobhato Bara.
+                    Runjhunati Nupure Charani Ghagariya॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय मंगलमूर्ति।
+                    दर्शनमात्रे मनकामना पुरती॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="devanagari">
+                    लम्बोदर पीताम्बर फणिवर बन्धना।
+                    सरळ सोण्ड वक्रतुण्ड त्रिनयना।
+                    दास रामाचा वाट पाहे सदना।
+                    संकटी पावावे निर्वाणी रक्षावे सुरवरवन्दना॥
+                </p>
+                <p class="english">
+                    Lambodara Pitambar Phanivara Bandhana.
+                    Sarala Sond Vakratunda Trinayana.
+                    Das Ramacha Vaat Pahe Sadana.
+                    Sankati Pavave Nirvani Rakshave Suravaravandana॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय मंगलमूर्ति।
+                    दर्शनमात्रे मनकामना पुरती॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="marathi_shankar">॥ श्री शंकराची आरती ॥</h2>
+                <p class="devanagari">
+                    लवथवती विक्राळा ब्रह्माण्डी माळा।
+                    वीषे कण्ठ काळा त्रिनेत्री ज्वाळा।
+                    लावण्य सुन्दर मस्तकी बाळा।
+                    तेथुनिया जळ निर्मळ वाहे झुळझुळा॥
+                </p>
+                <p class="english">
+                    Lavthavati Vikrala Brahmandi Mala.
+                    Vishe Kantha Kala Trinetri Jwala.
+                    Lavni Sundar Mastaki Bala.
+                    Tethuniya Jal Nirmal Vahe Zhullzhulla॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="devanagari">
+                    कर्पुर्गौरा भोळा नयनी विशाळा।
+                    अर्धांगी पार्वती सुमनांच्या माळा।
+                    विभुतीचे उधळण शितिकण्ठ नीळा।
+                    ऐसा शंकर शोभे उमावेल्हाळा॥
+                </p>
+                <p class="english">
+                    Karpurgaura Bhola Nayani Vishala.
+                    Ardhangi Parvati Sumanancha Mala.
+                    Vibhutiche Udhalan Shitikant Neela.
+                    Aisa Shankar Shobhe Umavelhala॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="devanagari">
+                    देवी दैत्यी सागरमन्थन पै केलें।
+                    त्यामाजी अवचित हळाहळ जें उठिले।
+                    ते त्वां असुरपणे प्राशन केलें।
+                    नीलकण्ठ नाम प्रसिद्ध झालें॥
+                </p>
+                <p class="english">
+                    Devi Daityi Sagarmanthan Pai Kele.
+                    Tyamaji Avachit Halahal Je Uthile.
+                    Te Tva Asurpane Prashan Kele.
+                    Neelkanth Naam Prasiddh Jhale॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="devanagari">
+                    व्याघ्राम्बर फणिवरधर सुन्दर मदनारी।
+                    पंचानन मनमोहन मुनिजन सुखकारी।
+                    शतकोटीचें बीज वाचे उच्चारी।
+                    रघुकुळटिळक रामदासा अन्तरी॥
+                </p>
+                <p class="english">
+                    Vyaghrambar Phanivardhar Sundar Madanari.
+                    Panchanan Manmohan Munijan Sukhkari.
+                    Shatakotichen Beej Vache Ucchari.
+                    Raghukul Tilak Ramdasa Antari॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="marathi_durga">॥ श्री दुर्गा देवीची आरती ॥</h2>
+                <p class="devanagari">
+                    दुर्गे दुर्घट भारी तुजविण संसारी।
+                    अनाथ नाथे अम्बे करुणा विस्तारी।
+                    वारी वारी जन्म मरणांते वारी।
+                    हारी पडलो आता संकट निवारी॥
+                </p>
+                <p class="english">
+                    Durge Durghat Bhari Tuzvin Sansari.
+                    Anath Nathe Ambe Karuna Vistari.
+                    Vari Vari Janma Marnante Vari.
+                    Hari Padlo Ata Sankat Nivari॥
+                </p>
+                <p class="devanagari">
+                    जय देवी जय देवी महिषासुरमथिनी।
+                    सुरवर ईश्वर वरदे तारक संजीवनी॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="devanagari">
+                    त्रिभुवन-भुवनी पाहता तुज ऐसी नाही।
+                    चारी श्रमले परन्तु न बोलवे काही।
+                    साही विवाद करिता पडले प्रवाही।
+                    ते तू भक्तालागी पावसि लवलाही॥
+                </p>
+                <p class="english">
+                    Tribhuvan-Bhuvani Pahta Tuz Aesi Nahi.
+                    Chari Shramle Parantu Na Bolve Kahi.
+                    Sahi Vivad Karita Padle Pravahi.
+                    Te Tu Bhaktalagi Pavasi Lavlahi॥
+                </p>
+                <p class="devanagari">
+                    जय देवी जय देवी महिषासुरमथिनी।
+                    सुरवर ईश्वर वरदे तारक संजीवनी॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="devanagari">
+                    प्रसन्न वदने प्रसन्न होसी निजदासा।
+                    क्लेशांपासुनि सोडवि तोडी भवपाशा।
+                    अम्बे तुजवाचून कोण पुरविल आशा।
+                    नरहरी तल्लिन झाला पदपंकजलेशा॥
+                </p>
+                <p class="english">
+                    Prasann Vadane Prasann Hosi Nijdasa.
+                    Kleshampasuni Sodavi Todi Bhavpasha.
+                    Ambe Tuzvachun Kon Puravil Asha.
+                    Narhari Tallin Zhala Padpankajlesha॥
+                </p>
+                <p class="devanagari">
+                    जय देवी जय देवी महिषासुरमथिनी।
+                    सुरवर ईश्वर वरदे तारक संजीवनी॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="marathi_vitthoba">॥ श्री विठोबाची आरती ॥</h2>
+                <p class="devanagari">
+                    युगें अठ्ठावीस विटेवरी उभा।
+                    वामांगी रखुमाई दिसे दिव्य शोभा।
+                    पुण्डलिकाचे भेटी परब्रह्म आलें गा।
+                    चरणी वाहे भीमा उद्धरी जगा॥
+                </p>
+                <p class="english">
+                    Yuge Atthavis Vitevari Ubha.
+                    Vamangi Rakhumai Dise Divya Shobha.
+                    Pundalikache Bheti Parabrahma Alen Ga.
+                    Charani Vahe Bhima Udhari Jaga॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    तुळसीमाळा गळां कर ठेवुनि कटीं।
+                    कांसे पीताम्बर कस्तुरि लल्लाटी।
+                    देव सुरवर नित्य येती भेटी।
+                    गरुड हनुमन्त पुढे उभे राहती॥
+                </p>
+                <p class="english">
+                    Tulsi Mala Gala Kar Thevuni Katin.
+                    Kanse Pitambar Kasturi Lallati.
+                    Dev Survar Nitya Yeti Bheti.
+                    Garud Hanumant Pudhe Ubhe Rahati॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    धन्य वेणुनाद अनुक्षेत्रपाळा।
+                    सुवर्णाची कमळे वनमाळा गळां।
+                    राही रखुमाबाई राणीया सकळा।
+                    ओवाळिती राजा विठोबा सांवळा॥
+                </p>
+                <p class="english">
+                    Dhanya Venunad Anukshetrapala.
+                    Suvarnachi Kamale Vanmala Gala.
+                    Rahi Rakhumabai Raniya Sakala.
+                    Ovaliti Raja Vithoba Sanwala॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    ओवाळूं आरत्या कुर्वण्ड्या येती।
+                    चन्द्रभागेमाजी सोडुनियां देती।
+                    दिंड्या पताका वैष्णव नाचती।
+                    पंढरीचा महिमा वर्णावा किती॥
+                </p>
+                <p class="english">
+                    Ovalun Aartya Kurvandiya Yeti.
+                    Chandrabhaagemaaji Soduniya Deti.
+                    Dindya Pataka Vaishnav Nachati.
+                    Pandharicha Mahima Varnava Kiti॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    आषाढी कार्तिकी भक्तजन येती।
+                    चन्द्रभागेमाजी स्नाने जे करिती।
+                    दर्शनहेळामात्रें तयां होय मुक्ती।
+                    केशवासी नामदेव भावे ओंवाळिती॥
+                </p>
+                <p class="english">
+                    Aashadhi Kartiki Bhaktajan Yeti.
+                    Chandrabhaagemaaji Snane Je Kariti.
+                    Darshanhelamatre Tyan Hoy Mukti.
+                    Keshavasi Namdev Bhave Ovaliti॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="marathi_dnyanray">॥ आरती ज्ञानरायाची ॥</h2>
+                <p class="devanagari">
+                    आरती ज्ञानराजा ।। महाकैवल्यतेजा ।
+                    सेविती साधुसंत । मनु वेधला माझा ॥।ध्रु० ॥।
+                </p>
+                <p class="english">
+                    Aarti Jnanaraja ॥ Mahakaivalyateja ॥
+                    Seviti Sadhusant । Manu Vedhala Majha ॥। Dhru ॥।
+                </p>
+                <p class="devanagari">
+                    लोपलें ज्ञान जगीं। हित नेणती कोणी।
+                    अवतार पांडुरंग । नाम ठेविलें ज्ञानी ॥।१॥
+                </p>
+                <p class="english">
+                    Lopale Gyan Jagin । Hit Nenti Koni ।
+                    Avatar Pandurang । Naam Thevile Gnyani ॥।1॥
+                </p>
+                <p class="devanagari">
+                    कनकाचे ताट करीं ।उभ्या गोपिका नारी ।
+                    नारद तुंबरहो ।सामगायन करी ।२॥
+                </p>
+                <p class="english">
+                    Kanakache Tat Karin । Ubhya Gopika Nari ।
+                    Narad Tumbarho । Samgayan Kari ॥2॥
+                </p>
+                <p class="devanagari">
+                    प्रगटगुह्य बोले । विश्व ब्रह्मचि केले ।
+                    रामजनार्दनी । पायी मस्तक ठेविलें ॥।३॥
+                </p>
+                <p class="english">
+                    Pragatguhya Bole । Vishva Brahmachi Kele ।
+                    Ramjanardani । Payi Mastak Thevile ॥।3॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="marathi_ganesh_hindi">॥ श्री गणेशजी की आरती ॥</h2>
+                <p class="devanagari">
+                    जय गणेश, जय गणेश, जय गणेश देवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="devanagari">
+                    एकदन्त दयावन्त, चार भुजाधारी।
+                    माथे पर तिलक सोहे, मूसे की सवारी॥ x2
+                    (माथे पर सिन्दूर सोहे, मूसे की सवारी॥)
+                </p>
+                <p class="english">
+                    Ekdant Dayavant, Char Bhujadhari.
+                    Mathe Par Tilak Sohe, Moose Ki Sawari॥ x2
+                    (Mathe Par Sindoor Sohe, Moose Ki Sawari॥)
+                </p>
+                <p class="devanagari">
+                    पान चढ़े फूल चढ़े, और चढ़े मेवा।
+                    (हार चढ़े, फूल चढ़े, और चढ़े मेवा।)
+                    लड्डुअन का भोग लगे, सन्त करें सेवा॥ x2
+                </p>
+                <p class="english">
+                    Paan Chadhe Phool Chadhe, Aur Chadhe Mewa.
+                    (Haar Chadhe, Phool Chadhe, Aur Chadhe Mewa.)
+                    Ladduan Ka Bhog Lage, Sant Karen Seva॥ x2
+                </p>
+                <p class="devanagari">
+                    जय गणेश, जय गणेश, जय गणेश देवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="devanagari">
+                    अँधे को आँख देत, कोढ़िन को काया।
+                    बाँझन को पुत्र देत, निर्धन को माया॥ x2
+                </p>
+                <p class="english">
+                    Andhe Ko Aankh Det, Kodhin Ko Kaya.
+                    Banjhan Ko Putra Det, Nirdhan Ko Maya॥ x2
+                </p>
+                <p class="devanagari">
+                    'सूर' श्याम शरण आए, सफल कीजे सेवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                    (दीनन की लाज राखो, शम्भु सुतवारी।
+                    कामना को पूर्ण करो, जग बलिहारी॥ x2)
+                </p>
+                <p class="english">
+                    ‘Sur’ Shyam Sharan Aaye, Safal Kije Seva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                    (Deenan Ki Laaj Rakho, Shambhu Sutwari।
+                    Kamana Ko Purn Karo, Jag Balihari॥ x2)
+                </p>
+                <p class="devanagari">
+                    जय गणेश, जय गणेश, जय गणेश देवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="prayer">
+                <h3 id="marathi_ghalin_lotangan">घालीन लोटांगण</h3>
+                <p class="devanagari">
+                    घालीन लोटांगण वंदीन चरण ।
+                    डोळ्यांनी पाहिन रूप तुझे ।
+                    प्रेमें आलिंगीन आनंद पूजन ।
+                    भावे ओवाळिन म्हणे नामा ।।
+                </p>
+                <p class="english">
+                    Ghalin Lotangan Vandeen Charan ।
+                    Dolyanni Pahin Roop Tujhe ।
+                    Premen Alingin Anand Poojan ।
+                    Bhave Ovalin Mhane Nama ।।
+                </p>
+                <p class="devanagari">
+                    त्वमेव माता पिता त्वमेव ।
+                    त्वमेव बन्धु: सखा त्वमेव ।
+                    त्वमेव विद्या द्रविणं त्वमेव ।
+                    त्वमेव सर्वं मम देवदेव ।।
+                </p>
+                <p class="english">
+                    Tvameva Mata Pita Tvameva ।
+                    Tvameva Bandhu: Sakha Tvameva ।
+                    Tvameva Vidya Dravinam Tvameva ।
+                    Tvameva Sarvam Mama Devadev ।।
+                </p>
+                <p class="devanagari">
+                    कायेन वाचा मनसेंद्रियैर्वा ।
+                    बुध्यात्मना वा प्रकृति स्वभावात् ।
+                    करमि यद्यत् सकलं परस्मै ।
+                    नारायणायेती समर्पयामि ।।
+                </p>
+                <p class="english">
+                    Kayena Vacha Manasendriyarva ।
+                    Budhyatmana Va Prakriti Swabhavat ।
+                    Karami Yadyat Saklam Parsmai ।
+                    Narayanaayeti Samarpayami ।।
+                </p>
+                <p class="devanagari">
+                    अच्युतं केशवं राम नारायणम्
+                    कृष्णदामोदरं वासुदेवं भजे।
+                    श्रीधरं माधवं गोपिकावल्लभम्
+                    जानकीनायकं रामचंद्र भजे ।।
+                </p>
+                <p class="english">
+                    Achyutam Keshavam Ram Narayanam
+                    Krishna Damodaram Vasudevam Bhaje।
+                    Shridharam Madhavam Gopikavallabham
+                    Janakinaayakam Ramchandra Bhaje ।।
+                </p>
+                <p class="devanagari">
+                    हरे राम हरे राम राम राम हरे हरे हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ।।
+                </p>
+                <p class="english">
+                    Hare Ram Hare Ram Ram Ram Hare Hare Hare Krishna Hare Krishna Krishna Krishna Hare Hare ।।
+                </p>
+                <p class="devanagari">
+                    **।। मंगलमुर्ती मोरया ।।**
+                </p>
+                <p class="english">
+                    **॥ Mangalmurti Morya ॥**
+                </p>
+                <p class="devanagari">
+                    **।। गणपतिबाप्पा मोरया ।।**
+                </p>
+                <p class="english">
+                    **॥ Ganpatibappa Morya ॥**
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="prayer">
+                <h3 id="marathi_karpur_gauram">कर्पूर गौरं</h3>
+                <p class="devanagari">
+                    कर्पूरगौरं करुणावतारं
+                    संसारसारम् भुजगेन्द्रहारम् ।
+                    सदावसन्तं हृदयारविन्दे
+                    भवं भवानीसहितं नमामि ॥
+                </p>
+                <p class="english">
+                    Karpurgauram Karunavataram
+                    Sansarasaram Bhujagendraharaṁ ।
+                    Sadavasantam Hridayaravinde
+                    Bhavam Bhavanisahitam Namami ॥
+                </p>
+                <p class="devanagari">
+                    ॐ एकदन्ताय विद्धमहे, वक्रतुण्डाय धीमहि, तन्नो दन्ति प्रचोदयात्॥
+                </p>
+                <p class="english">
+                    Om Ekadantaya Viddhamahe, Vakratundaya Dhimahi, Tanno Danti Prachodayat॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="prayer">
+                <h3 id="marathi_mantra_pushpanjali">मंत्रपुष्पांजलि</h3>
+                <p class="devanagari">
+                    ॐ यज्ञेन यज्ञमयजंत देवास्तानि धर्माणि प्रथमान्यासन् ।
+                    ते ह नाकं महिमान: सचंत यत्र पूर्वे साध्या:संति देवा: ॥
+                </p>
+                <p class="english">
+                    Om Yajñena Yajñamayajanta Devastani Dharmani Prathamanyasan ।
+                    Te Ha Nakam Mahimanah Sachant Yatra Purve Sadhyah Santi Devah ॥
+                </p>
+                <p class="devanagari">
+                    ॐ राजाधिराजाय प्रसह्यसाहिने ।
+                    नमो वयं वैश्रवणाय कुर्महे ।
+                    स मे कामान् कामकामाय मह्यंकामेश्वरो वैश्रवणो ददातु ।
+                    कुबेराय वैश्रवणाय महाराजाय नम: ।
+                </p>
+                <p class="english">
+                    Om Rajadhirajaya Prasahyasahine ।
+                    Namo Vayam Vaishravanaya Kurmahe ।
+                    Sa Me Kaman Kamkamaya Mahyankameshvaro Vaishravano Dadatu ।
+                    Kuberaya Vaishravanaya Maharajaya Namah ।
+                </p>
+                <p class="devanagari">
+                    ॐ स्वस्ति ।
+                    साम्राज्यं भौज्यं स्वाराज्यं वैराज्यं पारमेष्ठ्यं राज्यं महाराज्यमाधिपत्यमयं
+                    समंतपर्याईस्यात् सार्वभौम: सार्वायुष आंतादापरार्धात् ।
+                    पृथिव्यैसमुद्रपर्यंताया एकराळिती । तदप्येषश्लोकोऽभिगीतो “मरुत: परिवेष्टारो मरुत्तस्याऽवसन् गृहे । आविक्षितस्यकामप्रेर्विश्वेदेवा: सभासद” इति ।
+                </p>
+                <p class="english">
+                    Om Swasti ।
+                    Samrajyam Bhaujyam Swarajyam Vairajyam Parameshtyam Rajyam Maharajyamadhipatyamaya
+                    Samantaparyaisyat Sarvabhaumah Sarvayush Antadaparardhat ।
+                    Prithivyae Samudraparyantaya Ekaraliti । Tadapyeshshloko'bhigito “Marutah Pariveshtaro Maruttasya Avasan Gruhe । Avikshitasyakamaprer Vishvedevoh Sabhasad” iti ।
+                </p>
+            </div>
+        </div>
+
+        <div id="tamil" class="tab-content">
+            <div class="toc">
+                <h2>அடக்கக்குறிப்பு</h2>
+                <ul>
+                    <li><a href="#tamil_ganesh_marathi">கணபதி ஆரத்தி</a></li>
+                    <li><a href="#tamil_shankar">சங்கரர் ஆரத்தி</a></li>
+                    <li><a href="#tamil_durga">துர்கா தேவி ஆரத்தி</a></li>
+                    <li><a href="#tamil_vitthoba">விட்டோபா ஆரத்தி</a></li>
+                    <li><a href="#tamil_dnyanray">ஞானராயர் ஆரத்தி</a></li>
+                    <li><a href="#tamil_ganesh_hindi">கணேஷ்ஜி ஆரத்தி</a></li>
+                    <li><a href="#tamil_ghalin_lotangan">காலின் லோட்டங்கன்</a></li>
+                    <li><a href="#tamil_karpur_gauram">கர்ப்பூர கௌரம்</a></li>
+                    <li><a href="#tamil_mantra_pushpanjali">மந்திர புஷ்பாஞ்சலி</a></li>
+                </ul>
+            </div>
+
+            <div class="aarati">
+                <h2 id="tamil_ganesh_marathi">॥ ஸ்ரீ கணபதிச்சி ஆரத்தி ॥</h2>
+                <p class="tamil-text">
+                    சுககர்த்தா துக்கஹர்த்தா வார்த்தா விக்னாசி।
+                    நுரவி புரவி பிரேம கிருபா ஜயாசி।
+                    சர்வாங்கி சுந்தர் உடி ஷெண்டுராசி।
+                    கந்தி ஜல்கே மால முக்தாபலாஞ்சி॥
+                </p>
+                <p class="english">
+                    Sukhakarta Dukhharta Varta Vighnachi.
+                    Nuravi Puravi Prema Krupa Jayachi.
+                    Sarvangi Sundar Uti Shendurachi.
+                    Kanthi Jhalke Mala Muktaphalanchi॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய மங்கலமூர்த்தி।
+                    தரிசனமாத்ரே மனகாமனா புரதி॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="tamil-text">
+                    ரத்னகச்சித் ஃபரா துஜ கௌரிகுமரா।
+                    சந்தனாசி உடி குங்குமகேசரா।
+                    ஹிரே ஜடித் முகுட் ஷோபதோ பரா।
+                    ருணஜுணதி நூபுரே சரணி காகரியா॥
+                </p>
+                <p class="english">
+                    Ratnakhachit Phara Tuj Gaurikumara.
+                    Chandanachi Uti Kunkumakeshara.
+                    Hire Jadit Mukut Shobhato Bara.
+                    Runjhunati Nupure Charani Ghagariya॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய மங்கலமூர்த்தி।
+                    தரிசனமாத்ரே மனகாமனா புரதி॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="tamil-text">
+                    லம்போதரா பிதாம்பர ஃபணிவர பந்தனா।
+                    சரள சோண்ட வக்ரதுண்ட த்ரிநயனா।
+                    தாச ராமாசா வாட் பாஹே சதனா।
+                    சங்கடி பாவாவே நிர்வாணீ ரக்ஷாவே சுரவரவண்டனா॥
+                </p>
+                <p class="english">
+                    Lambodara Pitambar Phanivara Bandhana.
+                    Sarala Sond Vakratunda Trinayana.
+                    Das Ramacha Vaat Pahe Sadana.
+                    Sankati Pavave Nirvani Rakshave Suravaravandana॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய மங்கலமூர்த்தி।
+                    தரிசனமாத்ரே மனகாமனா புரதி॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="tamil_shankar">॥ ஸ்ரீ சங்கராச்சி ஆரத்தி ॥</h2>
+                <p class="tamil-text">
+                    லவதவதி விக்ராளா பிரம்மாண்டி மாளா।
+                    வீஷே கண்டி காளா த்ரிநேத்ரீ ஜ்வாளா।
+                    லாவண்ய சுந்தர மஸ்தகி பாளா।
+                    தேதுனிய ஜள் நிர்மள் வாஹே ஜுள்ஜுளா॥
+                </p>
+                <p class="english">
+                    Lavthavati Vikrala Brahmandi Mala.
+                    Vishe Kantha Kala Trinetri Jwala.
+                    Lavni Sundar Mastaki Bala.
+                    Tethuniya Jal Nirmal Vahe Zhullzhulla॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய ஸ்ரீசங்கரா।
+                    ஆரத்தி ஓவாளு துஜ கர்ப்பூரகௌரா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="tamil-text">
+                    கர்ப்பூரகௌரா போளா நயனி விஷாளா।
+                    அர்தாங்கீ பார்வதி சுமனாஞ்ச்யா மாளா।
+                    விபூதிசே உதளண சிதிகண்ட நீளா।
+                    ஐசா சங்கர ஷோபே உமா வேல்ஹாளா॥
+                </p>
+                <p class="english">
+                    Karpurgaura Bhola Nayani Vishala.
+                    Ardhangi Parvati Sumanancha Mala.
+                    Vibhutiche Udhalan Shitikant Neela.
+                    Aisa Shankar Shobhe Umavelhala॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய ஸ்ரீசங்கரா।
+                    ஆரத்தி ஓவாளு துஜ கர்ப்பூரகௌரா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="tamil-text">
+                    தேவி தைத்தியி சாகரமந்தன் பை கேலே।
+                    த்யாமாஜீ அவச்சித் ஹளாஹள் ஜே உட்டிலே।
+                    தே த்வா அசுரபணே பிராஷன கேலே।
+                    நீலகண்ட் நாம் பிரசித்த ஜாலே॥
+                </p>
+                <p class="english">
+                    Devi Daityi Sagarmanthan Pai Kele.
+                    Tyamaji Avachit Halahal Je Uthile.
+                    Te Tva Asurpane Prashan Kele.
+                    Neelkanth Naam Prasiddh Jhale॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய ஸ்ரீசங்கரா।
+                    ஆரத்தி ஓவாளு துஜ கர்ப்பூரகௌரா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="tamil-text">
+                    வ்யாக்ராம்பர் ஃபணிவர்தர சுந்தர மதநாரி।
+                    பஞ்சானன் மனமோஹன் முனிஜன சுககாரி।
+                    ஷதகோட்டிசே பீஜ் வாச உச்சாரீ।
+                    ரகுக்குளதிலக் ராம்தாசா அந்தரீ॥
+                </p>
+                <p class="english">
+                    Vyaghrambar Phanivardhar Sundar Madanari.
+                    Panchanan Manmohan Munijan Sukhkari.
+                    Shatakotichen Beej Vache Ucchari.
+                    Raghukul Tilak Ramdasa Antari॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய ஸ்ரீசங்கரா।
+                    ஆரத்தி ஓவாளு துஜ கர்ப்பூரகௌரா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="tamil_durga">॥ ஸ்ரீ துர்கா தேவிச்சி ஆரத்தி ॥</h2>
+                <p class="tamil-text">
+                    துர்கே துர்கட் பாரி துஜவிண் சன்சாரீ।
+                    அனாத் நாதே அம்பே கருணா விஸ்தாரீ।
+                    வாரீ வாரீ ஜன்ம மரணாந்தே வாரீ।
+                    ஹாரீ படலோ ஆதா சங்கட் நிவாரீ॥
+                </p>
+                <p class="english">
+                    Durge Durghat Bhari Tuzvin Sansari.
+                    Anath Nathe Ambe Karuna Vistari.
+                    Vari Vari Janma Marnante Vari.
+                    Hari Padlo Ata Sankat Nivari॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவி ஜய தேவி மஹிஷாசுரமதினி।
+                    சுரவர ஈஸ்வர வரதே தாரக் சஞ்சீவனி॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="tamil-text">
+                    த்ரிபுவன்-புவனி பாஹதா துஜ ஏஸி நாஹீ।
+                    சாரீ ஸ்ரம்லே பரந்து ந போல்வே காஹீ।
+                    சாஹீ விவாத் கரிதா படலே பிரவாஹீ।
+                    தே தூ பக்தாலாகீ பாவஸி லவலாஹீ॥
+                </p>
+                <p class="english">
+                    Tribhuvan-Bhuvani Pahta Tuz Aesi Nahi.
+                    Chari Shramle Parantu Na Bolve Kahi.
+                    Sahi Vivad Karita Padle Pravahi.
+                    Te Tu Bhaktalagi Pavasi Lavlahi॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவி ஜய தேவி மஹிஷாசுரமதினி।
+                    சுரவர ஈஸ்வர வரதே தாரக் சஞ்சீவனி॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="tamil-text">
+                    பிரசன்ன வதனே பிரசன்ன ஹோஸி நிஜதாசா।
+                    க்லேசாம்பாசுநி சோடவி தோடீ பவபாஷா।
+                    அம்பே துஜவாசூண் கோண் புரவில் ஆஷா।
+                    நரஹரீ தல்லின் ஜாலா பதபங்கஜலேஷா॥
+                </p>
+                <p class="english">
+                    Prasann Vadane Prasann Hosi Nijdasa.
+                    Kleshampasuni Sodavi Todi Bhavpasha.
+                    Ambe Tuzvachun Kon Puravil Asha.
+                    Narhari Tallin Zhala Padpankajlesha॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவி ஜய தேவி மஹிஷாசுரமதினி।
+                    சுரவர ஈஸ்வர வரதே தாரக் சஞ்சீவனி॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="tamil_vitthoba">॥ ஸ்ரீ விட்டோபாசி ஆரத்தி ॥</h2>
+                <p class="tamil-text">
+                    யுகே அட்டாதவீஸ் விட்டேவரீ உபா।
+                    வாமாங்கீ ரகுமாஈ திசே திவ்ய சோபா।
+                    புண்டலிகாசே பேடீ பரப்ரம்ம ஆலேன் கா।
+                    சரணீ வாஹே பீமா உத்தரீ ஜகா॥
+                </p>
+                <p class="english">
+                    Yuge Atthavis Vitevari Ubha.
+                    Vamangi Rakhumai Dise Divya Shobha.
+                    Pundalikache Bheti Parabrahma Alen Ga.
+                    Charani Vahe Bhima Udhari Jaga॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய பாண்டுரங்கா।
+                    ரகுமாஈவல்லபா ராஈச்யா வல்லபா பாவௌ ஜிவலகா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="tamil-text">
+                    துளசிமாளா களா கர டேவுநி கடீ।
+                    கான்சே பீதாம்பர கஸ்துரி லல்லாடீ।
+                    தேவ சுரவர நித்ய யேதி பேடீ।
+                    கருட ஹனுமந்த புடே உபே ராஹதீ॥
+                </p>
+                <p class="english">
+                    Tulsi Mala Gala Kar Thevuni Katin.
+                    Kanse Pitambar Kasturi Lallati.
+                    Dev Survar Nitya Yeti Bheti.
+                    Garud Hanumant Pudhe Ubhe Rahati॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய பாண்டுரங்கா।
+                    ரகுமாஈவல்லபா ராஈச்யா வல்லபா பாவௌ ஜிவலகா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="tamil-text">
+                    தன்ய வேணுநாத அனுக்ஷேத்ரபாளா।
+                    சுவர்ணாச்சி கமளே வனமாளா களா।
+                    ராஹீ ரகுமாபாஈ ராணீயா சகளா।
+                    ஓவாளிதீ ராஜா விட்டோபா சாவளா॥
+                </p>
+                <p class="english">
+                    Dhanya Venunad Anukshetrapala.
+                    Suvarnachi Kamale Vanmala Gala.
+                    Rahi Rakhumabai Raniya Sakala.
+                    Ovaliti Raja Vithoba Sanwala॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய பாண்டுரங்கா।
+                    ரகுமாஈவல்லபா ராஈச்யா வல்லபா பாவௌ ஜிவலகா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="tamil-text">
+                    ஓவாளும் ஆரத்யா குர்வண்ட்யா யேதீ।
+                    சந்திரபாகேமாஜீ சோடுனிய தேதீ।
+                    திண்ட்யா பதாகா வைஷ்ணவ நாசதீ।
+                    பண்டரீசா மஹிமா வர்ணாவா கிதீ॥
+                </p>
+                <p class="english">
+                    Ovalun Aartya Kurvandiya Yeti.
+                    Chandrabhaagemaaji Soduniya Deti.
+                    Dindya Pataka Vaishnav Nachati.
+                    Pandharicha Mahima Varnava Kiti॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய பாண்டுரங்கா।
+                    ரகுமாஈவல்லபா ராஈச்யா வல்லபா பாவௌ ஜிவலகா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="tamil-text">
+                    ஆஷாடீ கார்த்திகீ பக்தஜன் யேதீ।
+                    சந்திரபாகேமாஜீ ஸ்நானே ஜே கரிதீ।
+                    தரிசனஹேளாமாத்ரே தயாம் ஹோய முக்தி।
+                    கேசவாஸீ நாம் தேவ பாவே ஓவாளிதீ॥
+                </p>
+                <p class="english">
+                    Aashadhi Kartiki Bhaktajan Yeti.
+                    Chandrabhaagemaaji Snane Je Kariti.
+                    Darshanhelamatre Tyan Hoy Mukti.
+                    Keshavasi Namdev Bhave Ovaliti॥
+                </p>
+                <p class="tamil-text">
+                    ஜய தேவ ஜய தேவ ஜய பாண்டுரங்கா।
+                    ரகுமாஈவல்லபா ராஈச்யா வல்லபா பாவௌ ஜிவலகா॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="tamil_dnyanray">॥ ஆரத்தி ஞானராயாச்சி ॥</h2>
+                <p class="tamil-text">
+                    ஆரத்தி ஞானராஜா ।। மஹாகைவல்யதேஜா ।
+                    சேவிதீ சாதுசந்த । மனு வேதல மாஜா ॥।த்ரு० ॥।
+                </p>
+                <p class="english">
+                    Aarti Jnanaraja ॥ Mahakaivalyateja ॥
+                    Seviti Sadhusant । Manu Vedhala Majha ॥। Dhru ॥।
+                </p>
+                <p class="tamil-text">
+                    லோபலே ஞான ஜகீன்। ஹித நேணதீ கோணீ।
+                    அவதார பாண்டுரங் । நாம் டேவிலே ஞானீ ॥।1॥
+                </p>
+                <p class="english">
+                    Lopale Gyan Jagin । Hit Nenti Koni ।
+                    Avatar Pandurang । Naam Thevile Gnyani ॥।1॥
+                </p>
+                <p class="tamil-text">
+                    கனகாசே டாட் கரீம் । உப்யா கோபிகா நாரீ ।
+                    நாரத தும்பரஹோ । சாமகாயன கரீ ।2॥
+                </p>
+                <p class="english">
+                    Kanakache Tat Karin । Ubhya Gopika Nari ।
+                    Narad Tumbarho । Samgayan Kari ॥2॥
+                </p>
+                <p class="tamil-text">
+                    பிரகட் குஹ்ய போலே । விஷ்வ பிரம்மசி கேலே ।
+                    ராமஜனார்தனி । பாயீ மஸ்தக டேவிலே ॥।3॥
+                </p>
+                <p class="english">
+                    Pragatguhya Bole । Vishva Brahmachi Kele ।
+                    Ramjanardani । Payi Mastak Thevile ॥।3॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="tamil_ganesh_hindi">॥ ஸ்ரீ கணேஷ்ஜி ஆரத்தி ॥</h2>
+                <p class="tamil-text">
+                    ஜய கணேஷ், ஜய கணேஷ், ஜய கணேஷ் தேவா।
+                    மாதா ஜாகீ பார்வதீ, பிதா மஹாதேவா॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="tamil-text">
+                    ஏகதந்த் தயாவந்த், சார் புஜாதாரீ।
+                    மாதே பர் திலக் ஸோஹே, மூஸே கீ ஸவாரீ॥ x2
+                    (மாதே பர் சிந்தூர் சோஹே, மூஸே கீ ஸவாரீ॥)
+                </p>
+                <p class="english">
+                    Ekdant Dayavant, Char Bhujadhari.
+                    Mathe Par Tilak Sohe, Moose Ki Sawari॥ x2
+                    (Mathe Par Sindoor Sohe, Moose Ki Sawari॥)
+                </p>
+                <p class="tamil-text">
+                    பான் சடே பூல் சடே, அவுர் சடே மேவா।
+                    (ஹார் சடே, பூல் சடே, அவுர் சடே மேவா।)
+                    லட்டூஅன் கா போக் லகே, ஸந்த கரேம் ஸேவா॥ x2
+                </p>
+                <p class="english">
+                    Paan Chadhe Phool Chadhe, Aur Chadhe Mewa.
+                    (Haar Chadhe, Phool Chadhe, Aur Chadhe Mewa.)
+                    Ladduan Ka Bhog Lage, Sant Karen Seva॥ x2
+                </p>
+                <p class="tamil-text">
+                    ஜய கணேஷ், ஜய கணேஷ், ஜய கணேஷ் தேவா।
+                    மாதா ஜாகீ பார்வதீ, பிதா மஹாதேவா॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="tamil-text">
+                    அன்தே கோ ஆங்க் தேத், கோடின் கோ காயா।
+                    பாஞ்சன் கோ புத்ர தேத், நிர்தன் கோ மாயா॥ x2
+                </p>
+                <p class="english">
+                    Andhe Ko Aankh Det, Kodhin Ko Kaya.
+                    Banjhan Ko Putra Det, Nirdhan Ko Maya॥ x2
+                </p>
+                <p class="tamil-text">
+                    'சூர்' ஷ்யாம் ஷரண் ஆயே, சஃபல் கீஜே ஸேவா।
+                    மாதா ஜாகீ பார்வதீ, பிதா மஹாதேவா॥ x2
+                    (தீனன் கீ லாஜ் ராகோ, சம்பு சுத்வாரீ।
+                    காமனா கோ பூர்ண கரோ, ஜக் பலிஹாரீ॥ x2)
+                </p>
+                <p class="english">
+                    ‘Sur’ Shyam Sharan Aaye, Safal Kije Seva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                    (Deenan Ki Laaj Rakho, Shambhu Sutwari।
+                    Kamana Ko Purn Karo, Jag Balihari॥ x2)
+                </p>
+                <p class="tamil-text">
+                    ஜய கணேஷ், ஜய கணேஷ், ஜய கணேஷ் தேவா।
+                    மாதா ஜாகீ பார்வதீ, பிதா மஹாதேவா॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="prayer">
+                <h3 id="tamil_ghalin_lotangan">காலின் லோட்டங்கன்</h3>
+                <p class="tamil-text">
+                    காலின் லோட்டங்கன் வந்தீன் சரண்।
+                    டோள்யான்னி பாஹின் ரூப் துஜே।
+                    பிரேமேன் அலிங்கின் ஆனந்த் பூஜன்।
+                    பாவே ஓவாளின் மாஹ்னே நாமா।।
+                </p>
+                <p class="english">
+                    Ghalin Lotangan Vandeen Charan ।
+                    Dolyanni Pahin Roop Tujhe ।
+                    Premen Alingin Anand Poojan ।
+                    Bhave Ovalin Mhane Nama ।।
+                </p>
+                <p class="tamil-text">
+                    த்வமேவ மாதா பிதா த்வமேவ।
+                    த்வமேவ பந்து: ஸகா த்வமேவ।
+                    த்வமேவ வித்யா த்ரவிணம் த்வமேவ।
+                    த்வமேவ சர்வஂ மம தேவதேவ।।
+                </p>
+                <p class="english">
+                    Tvameva Mata Pita Tvameva ।
+                    Tvameva Bandhu: Sakha Tvameva ।
+                    Tvameva Vidya Dravinam Tvameva ।
+                    Tvameva Sarvam Mama Devadev ।।
+                </p>
+                <p class="tamil-text">
+                    காயேன வாசா மனசேந்த்ரியைர்வா।
+                    புத்யாத்மனா வா பிரகிருதி ஸ்வபாவாத்।
+                    கரமி யத்யத் சகலம் பரஸ்மை।
+                    நாராயணாயேதி சமர்பயாமி।।
+                </p>
+                <p class="english">
+                    Kayena Vacha Manasendriyarva ।
+                    Budhyatmana Va Prakriti Swabhavat ।
+                    Karami Yadyat Saklam Parsmai ।
+                    Narayanaayeti Samarpayami ।।
+                </p>
+                <p class="tamil-text">
+                    அச்யுதம் கேசவம் ராம நாராயணம்।
+                    கிருஷ்ண தாமோதரம் வாசுதேவம் பஜே।
+                    ஸ்ரீதரம் மாதவம் கோபிகாவல்லபம்।
+                    ஜானகீநாயகஂ ராமசந்திர பஜே।।
+                </p>
+                <p class="english">
+                    Achyutam Keshavam Ram Narayanam
+                    Krishna Damodaram Vasudevam Bhaje।
+                    Shridharam Madhavam Gopikavallabham
+                    Janakinaayakam Ramchandra Bhaje ।।
+                </p>
+                <p class="tamil-text">
+                    ஹரே ராம் ஹரே ராம் ராம் ராம் ஹரே ஹரே। ஹரே கிருஷ்ண ஹரே கிருஷ்ண கிருஷ்ண கிருஷ்ண ஹரே ஹரே।।
+                </p>
+                <p class="english">
+                    Hare Ram Hare Ram Ram Ram Hare Hare Hare Krishna Hare Krishna Krishna Krishna Hare Hare ।।
+                </p>
+                <p class="tamil-text">
+                    **।। மங்கலமூர்த்தி மோரயா ।।**
+                </p>
+                <p class="english">
+                    **॥ Mangalmurti Morya ॥**
+                </p>
+                <p class="tamil-text">
+                    **।। கணபதிபாப்பா மோரயா ।।**
+                </p>
+                <p class="english">
+                    **॥ Ganpatibappa Morya ॥**
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="prayer">
+                <h3 id="tamil_karpur_gauram">கர்ப்பூர கௌரம்</h3>
+                <p class="tamil-text">
+                    கர்ப்பூர கௌரம் கருணாவதாரம்।
+                    சம்சாரசாரம் புஜகேந்த்ரஹாரம்।
+                    சதாவசந்தம் ஹ்ருதயாரவிந்தே।
+                    பவம் பவானீசஹிதம் நமாமி।।
+                </p>
+                <p class="english">
+                    Karpurgauram Karunavataram
+                    Sansarasaram Bhujagendraharaṁ ।
+                    Sadavasantam Hridayaravinde
+                    Bhavam Bhavanisahitam Namami ॥
+                </p>
+                <p class="tamil-text">
+                    ஓம் ஏகதந்தாய வித்தமஹே, வக்ரதுண்டாய தீமஹி, தன்னோ தந்தி பிரச்சோதயாத்॥
+                </p>
+                <p class="english">
+                    Om Ekadantaya Viddhamahe, Vakratundaya Dhimahi, Tanno Danti Prachodayat॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="prayer">
+                <h3 id="tamil_mantra_pushpanjali">மந்திர புஷ்பாஞ்சலி</h3>
+                <p class="tamil-text">
+                    ஓம் யக்ஞேன் யக்ஞமயஜந்த தேவாஸ்தானி தர்மாணி பிரதமாந்யாஸன்।
+                    தே ஹ நாகம் மஹிமாந: சசந்த யத்ர பூர்வே சாத்யா: சன்தி தேவா:॥
+                </p>
+                <p class="english">
+                    Om Yajñena Yajñamayajanta Devastani Dharmani Prathamanyasan ।
+                    Te Ha Nakam Mahimanah Sachant Yatra Purve Sadhyah Santi Devah ॥
+                </p>
+                <p class="tamil-text">
+                    ஓம் ராஜாதி ராஜாய ப்ரஸஹ்யசாஹிநே।
+                    நமோ வயம் வைஸ்ரவணாய குர்மஹே।
+                    ஸ மே காமான் காமகாமா அன்ய மஹ்யம்காமேஸ்வரோ வைஸ்ரவணோ ததாது।
+                    குபேராய வைஸ்ரவணாய மஹாராஜாய நம:।
+                </p>
+                <p class="english">
+                    Om Rajadhirajaya Prasahyasahine ।
+                    Namo Vayam Vaishravanaya Kurmahe ।
+                    Sa Me Kaman Kamkamaya Mahyankameshvaro Vaishravano Dadatu ।
+                    Kuberaya Vaishravanaya Maharajaya Namah ।
+                </p>
+                <p class="tamil-text">
+                    ஓம் ஸ்வஸ்தி।
+                    சாம்ராஜ்யம் பெளஜ்யம் ஸ்வராஜ்யம் வைராஜ்யம் பாரமேஷ்ட்யம் ராஜ்யம் மஹாராஜ்யமாதிபத்யமயம்।
+                    சமந்தபர்யாய்ஸியாத் சர்வபெளம: சர்வாயுஷ ஆந்தாதபராதத்।
+                    பிருதிவியைசமுத்ர பர்யந்தாய ஏகராளிதி। தடப்யேஷச்லோகோபிஹீதோ “மருத: பரிவேஷ்டாரோ மருதத்ஸ்யாவஸன் க்ருஹே। ஆவிக்ஷிதஸ்யகாமப்ரேர்விச்வேதேவா: சபாஸத” இதி।
+                </p>
+                <p class="english">
+                    Om Swasti ।
+                    Samrajyam Bhaujyam Swarajyam Vairajyam Parameshtyam Rajyam Maharajyamadhipatyamaya
+                    Samantaparyaisyat Sarvabhaumah Sarvayush Antadaparardhat ।
+                    Prithivyae Samudraparyantaya Ekaraliti । Tadapyeshshloko'bhigito “Marutah Pariveshtaro Maruttasya Avasan Gruhe । Avikshitasyakamaprer Vishvedevoh Sabhasad” iti ।
+                </p>
+            </div>
+        </div>
+        <div id="telugu" class="tab-content">
+            <div class="toc">
+                <h2>విషయ సూచిక</h2>
+                <ul>
+                    <li><a href="#telugu_ganesh_marathi">గణపతి ఆర్తి</a></li>
+                    <li><a href="#telugu_shankar">శంకర ఆర్తి</a></li>
+                    <li><a href="#telugu_durga">దుర్గా దేవి ఆర్తి</a></li>
+                    <li><a href="#telugu_vitthoba">విఠోబా ఆర్తి</a></li>
+                    <li><a href="#telugu_dnyanray">జ్ఞానరాయ ఆర్తి</a></li>
+                    <li><a href="#telugu_ganesh_hindi">గణేష్ జీ ఆర్తి</a></li>
+                    <li><a href="#telugu_ghalin_lotangan">ఘాలిన్ లోటాంగణ్</a></li>
+                    <li><a href="#telugu_karpur_gauram">కర్పూర గౌరం</a></li>
+                    <li><a href="#telugu_mantra_pushpanjali">మంత్ర పుష్పాంజలి</a></li>
+                </ul>
+            </div>
+            <div class="aarati">
+                <h2 id="telugu_ganesh_marathi">॥ శ్రీ గణపతిచీ ఆర్తి ॥</h2>
+                <p class="telugu-text">
+                    సుఖకర్తా దుఃఖహర్తా వార్తా విఘ్నాతీ।
+                    నురవి పురవి ప్రేమ కృపా జయాచి।
+                    సర్వాంగీ సుందర్ ఉటి షేందురాచి।
+                    కంఠీ ఝళకే మాళ ముక్తాఫళాంచీ॥
+                </p>
+                <p class="english">
+                    Sukhakarta Dukhharta Varta Vighnachi.
+                    Nuravi Puravi Prema Krupa Jayachi.
+                    Sarvangi Sundar Uti Shendurachi.
+                    Kanthi Jhalke Mala Muktaphalanchi॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ మంగలమూర్తి।
+                    దర్శనమాత్రే మనకామన పూరతీ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="telugu-text">
+                    రత్నఖచిత ఫరా తుజ గౌరీకుమరా।
+                    చందనాచి ఉటి కుంకుమకేశరా।
+                    హిరే జడిత్ ముకుట్ శోభతో బరా।
+                    రుణఝుణతీ నూపురే చరణీ ఘాఘరియా॥
+                </p>
+                <p class="english">
+                    Ratnakhachit Phara Tuj Gaurikumara.
+                    Chandanachi Uti Kunkumakeshara.
+                    Hire Jadit Mukut Shobhato Bara.
+                    Runjhunati Nupure Charani Ghagariya॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ మంగలమూర్తి।
+                    దర్శనమాత్రే మనకామన పూరతీ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="telugu-text">
+                    లంబోదర పీతాంబర ఫణివర బంధనా।
+                    సರಳ సోండ వక్రతుండ త్రినయనా।
+                    దాస రామాచా వాట్ పాహే సదనా।
+                    సంకటీ పావావే నిర్వాణీ రక్షావే సురవరవందనా॥
+                </p>
+                <p class="english">
+                    Lambodara Pitambar Phanivara Bandhana.
+                    Sarala Sond Vakratunda Trinayana.
+                    Das Ramacha Vaat Pahe Sadana.
+                    Sankati Pavave Nirvani Rakshave Suravaravandana॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ మంగలమూర్తి।
+                    దర్శనమాత్రే మనకామన పూరతీ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="aarati">
+                <h2 id="telugu_shankar">॥ శ్రీ శంకరచీ ఆర్తి ॥</h2>
+                <p class="telugu-text">
+                    లవతవతీ విక్రాళా బ్రహ్మాండీ మాళా।
+                    వీషే కంఠ కాళా త్రినేత్రీ జ్వాళా।
+                    లావణ్య సుందర్ మస్తకీ బాళా।
+                    తేతునియ జళ నిర్మళ వాహే ఝుళఝుళా॥
+                </p>
+                <p class="english">
+                    Lavthavati Vikrala Brahmandi Mala.
+                    Vishe Kantha Kala Trinetri Jwala.
+                    Lavni Sundar Mastaki Bala.
+                    Tethuniya Jal Nirmal Vahe Zhullzhulla॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ శ్రీశంకరా।
+                    ఆర్తి ఓవాళూ తుజ కర్పూరగౌరా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="telugu-text">
+                    కర్పూరగౌరా భోళా నయని విశాళా।
+                    అర్ధాంగీ పార్వతీ సుమనాంచ్యా మాళా।
+                    విభూతిచే ఉధళణ శితికంఠ నీళా।
+                    ఐసా శంకర శోభే ఉమావేల్హాళా॥
+                </p>
+                <p class="english">
+                    Karpurgaura Bhola Nayani Vishala.
+                    Ardhangi Parvati Sumanancha Mala.
+                    Vibhutiche Udhalan Shitikant Neela.
+                    Aisa Shankar Shobhe Umavelhala॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ శ్రీశంకరా।
+                    ఆర్తి ఓవాళూ తుజ కర్పూరగౌరా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="telugu-text">
+                    దేవి దైత్యీ సాగరమంథన పై కేలే।
+                    త్యామాజీ అవచిత్ హళాహళ జే ఉథిలే।
+                    తే త్వా అసురపణే ప్రాశన కేలే।
+                    నీలకంఠ్ నామ్ ప్రసిద్ధ ఝాలే॥
+                </p>
+                <p class="english">
+                    Devi Daityi Sagarmanthan Pai Kele.
+                    Tyamaji Avachit Halahal Je Uthile.
+                    Te Tva Asurpane Prashan Kele.
+                    Neelkanth Naam Prasiddh Jhale॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ శ్రీశంకరా।
+                    ఆర్తి ఓవాళూ తుజ కర్పూరగౌరా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="telugu-text">
+                    వ్యాఘ్రాంబర ఫణివరధర సుందర మదనారీ।
+                    పంచానన మనమోహన మునిజన సుఖకారీ।
+                    శతకోటీచే బీజ వాచె ఉచ్చారీ।
+                    రఘుకుళతిలక్ రామదాసా అంతరీ॥
+                </p>
+                <p class="english">
+                    Vyaghrambar Phanivardhar Sundar Madanari.
+                    Panchanan Manmohan Munijan Sukhkari.
+                    Shatakotichen Beej Vache Ucchari.
+                    Raghukul Tilak Ramdasa Antari॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ శ్రీశంకరా।
+                    ఆర్తి ఓవాళూ తుజ కర్పూరగౌరా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="aarati">
+                <h2 id="telugu_durga">॥ శ్రీ దుర్గా దేవిచీ ఆర్తి ॥</h2>
+                <p class="telugu-text">
+                    దుర్గే దుర్ఘట్ భారీ తుజవిణ్ సంసారీ।
+                    అనాథ నాథే అంబే కరుణా విస్తారీ।
+                    వారీ వారీ జన్మ మరణాం
+                    తేవారీ। హారీ పడలో ఆతా సంకట్ నివారీ॥
+                </p>
+                <p class="english">
+                    Durge Durghat Bhari Tuzvin Sansari.
+                    Anath Nathe Ambe Karuna Vistari.
+                    Vari Vari Janma Marnante Vari.
+                    Hari Padlo Ata Sankat Nivari॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవి జయ దేవి మహిషాసురమథినీ।
+                    సురవర ఈశ్వర్ వరదే తారక్ సంజీవనీ॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="telugu-text">
+                    త్రిభువన-భువనీ పాహతా తుజ ఏసీ నాహీ।
+                    చారీ శ్రమలే పరంతు న బోలవే కాహీ।
+                    సాహీ వివాద కరితా పడలే ప్రవాహీ।
+                    తే తూ భక్తాలాగీ పావసి లవలాహీ॥
+                </p>
+                <p class="english">
+                    Tribhuvan-Bhuvani Pahta Tuz Aesi Nahi.
+                    Chari Shramle Parantu Na Bolve Kahi.
+                    Sahi Vivad Karita Padle Pravahi.
+                    Te Tu Bhaktalagi Pavasi Lavlahi॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవి జయ దేవి మహిషాసురమథినీ।
+                    సురవర ఈశ్వర్ వరదే తారక్ సంజీవనీ॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="telugu-text">
+                    ప్రసన్న వదనే ప్రసన్న హోసీ నిజదాసా।
+                    క్లేశాంపాసుని సోడవి తోడీ భవపాషా।
+                    అంబే తుజవాచూన్ కోణ్ పూరవిల్ ఆశా।
+                    నరహరీ తల్లిన్ ఝాలా పదపంకజలేషా॥
+                </p>
+                <p class="english">
+                    Prasann Vadane Prasann Hosi Nijdasa.
+                    Kleshampasuni Sodavi Todi Bhavpasha.
+                    Ambe Tuzvachun Kon Puravil Asha.
+                    Narhari Tallin Zhala Padpankajlesha॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవి జయ దేవి మహిషాసురమథినీ।
+                    సురవర ఈశ్వర్ వరదే తారక్ సంజీవనీ॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="aarati">
+                <h2 id="telugu_vitthoba">॥ శ్రీ విఠోబాచీ ఆర్తి ॥</h2>
+                <p class="telugu-text">
+                    యుగే అఠ్ఠావీస విటేవరీ ఉభా।
+                    వామాంగీ రఖుమాఈ దిసే దివ్య శోభా।
+                    పుండలికాచే భేటీ పరబ్రహ్మ ఆలేం గా।
+                    చరణీ వాహే భీమా ఉధరీ జగ॥
+                </p>
+                <p class="english">
+                    Yuge Atthavis Vitevari Ubha.
+                    Vamangi Rakhumai Dise Divya Shobha.
+                    Pundalikache Bheti Parabrahma Alen Ga.
+                    Charani Vahe Bhima Udhari Jaga॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ పాండరంగ।
+                    రఖుమాఈవల్లభా రాఈచ్యా వల్లభా పావేం జివళగా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="telugu-text">
+                    తుళసీమాళా గళాం కర్ ఠేవూని కటీం।
+                    కాంసే పీతాంబర కస్తూరి లల్లాటీ।
+                    దేవ సురవర నిత్య యేతీ భేటీ।
+                    గరుడ్ హనుమంత పుఢే ఉభే రాహతీ॥
+                </p>
+                <p class="english">
+                    Tulsi Mala Gala Kar Thevuni Katin.
+                    Kanse Pitambar Kasturi Lallati.
+                    Dev Survar Nitya Yeti Bheti.
+                    Garud Hanumant Pudhe Ubhe Rahati॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ పాండరంగ।
+                    రఖుమాఈవల్లభా రాఈచ్యా వల్లభా పావేం జివళగా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="telugu-text">
+                    ధన్య వేణునాద్ అనుక్షేత్రపాళా।
+                    సువర్ణాచీ కమళే వనమాళా గళా।
+                    రాహీ రఖుమాబాఈ రాణీయా సకళా।
+                    ఓవాళితీ రాజా విఠోబా సాంవళా॥
+                </p>
+                <p class="english">
+                    Dhanya Venunad Anukshetrapala.
+                    Suvarnachi Kamale Vanmala Gala.
+                    Rahi Rakhumabai Raniya Sakala.
+                    Ovaliti Raja Vithoba Sanwala॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ పాండరంగ।
+                    రఖుమాఈవల్లభా రాఈచ్యా వల్లభా పావేం జివళగా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="telugu-text">
+                    ఓవాళూం ఆర్త్యా కుర్వం
+                    డ్యా యేతీ। చంద్రభాగేమాజీ సోడునియా దేతీ।
+                    దిండ్యా పతాకా వైష్ణవ నాచతీ।
+                    పంఢరీచా మహిమా వర్ణావా కితీ॥
+                </p>
+                <p class="english">
+                    Ovalun Aartya Kurvandiya Yeti.
+                    Chandrabhaagemaaji Soduniya Deti.
+                    Dindya Pataka Vaishnav Nachati.
+                    Pandharicha Mahima Varnava Kiti॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ పాండరంగ।
+                    రఖుమాఈవల్లభా రాఈచ్యా వల్లభా పావేం జివళగా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="telugu-text">
+                    ఆషాఢీ కార్తికీ భక్తజన యేతీ।
+                    చంద్రభాగేమాజీ స్నానే జే కరితీ।
+                    దర్శనహేళామాత్రే తయాం హోయ ముక్తి।
+                    కేశవాసీ నామదేవ్ భావే ఓం
+                    వాళితీ॥
+                </p>
+                <p class="english">
+                    Aashadhi Kartiki Bhaktajan Yeti.
+                    Chandrabhaagemaaji Snane Je Kariti.
+                    Darshanhelamatre Tyan Hoy Mukti.
+                    Keshavasi Namdev Bhave Ovaliti॥
+                </p>
+                <p class="telugu-text">
+                    జయ దేవ జయ దేవ జయ పాండరంగ।
+                    రఖుమాఈవల్లభా రాఈచ్యా వల్లభా పావేం జివళగా॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="aarati">
+                <h2 id="telugu_dnyanray">॥ ఆర్తి జ్ఞానరాయాచీ ॥</h2>
+                <p class="telugu-text">
+                    ఆర్తి జ్ఞానరాజా ।। మహాకైవల్యతేజా।
+                    సేవితీ సాధుసంత । మను వేధలా మాజా ॥।ధ్రు० ॥।
+                </p>
+                <p class="english">
+                    Aarti Jnanaraja ॥ Mahakaivalyateja ॥
+                    Seviti Sadhusant । Manu Vedhala Majha ॥। Dhru ॥।
+                </p>
+                <p class="telugu-text">
+                    లోపలేం జ్ఞాన జగీం। హిత్ నేణతీ కోణీ।
+                    అవతార్ పాండరంగ । నామ్ ఠేవిలేం జ్ఞానీ ॥।1॥
+                </p>
+                <p class="english">
+                    Lopale Gyan Jagin । Hit Nenti Koni ।
+                    Avatar Pandurang । Naam Thevile Gnyani ॥।1॥
+                </p>
+                <p class="telugu-text">
+                    కనకాచే తాట్ కరీం । ఉభ్యా గోపిక నారీ ।
+                    నారద తుంబరహో । సా
+                    మగాయన కరీ ॥2॥
+                </p>
+                <p class="english">
+                    Kanakache Tat Karin । Ubhya Gopika Nari ।
+                    Narad Tumbarho । Samgayan Kari ॥2॥
+                </p>
+                <p class="telugu-text">
+                    ప్రగటగుహ్య బోలే । విశ్వ బ్రహ్మచి కేలే।
+                    రామజనార్దనీ । పాయీ మస్తక్ ఠేవిలేం ॥।3॥
+                </p>
+                <p class="english">
+                    Pragatguhya Bole । Vishva Brahmachi Kele ।
+                    Ramjanardani । Payi Mastak Thevile ॥।3॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="aarati">
+                <h2 id="telugu_ganesh_hindi">॥ శ్రీ గణేష్ జీ కీ ఆర్తి ॥</h2>
+                <p class="telugu-text">
+                    జయ గణేష్, జయ గణేష్, జయ గణేష్ దేవా।
+                    మాతా జాకీ పార్వతీ, పితా మహాదేవా॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="telugu-text">
+                    ఏకదంత దయావంత, చార్ భుజాధారీ।
+                    మాథే పర్ తిలక్ సోహే, మూసే కీ సవారీ॥ x2
+                    (మాథే పర్ సిందూర్ సోహే, మూసే కీ సవారీ॥)
+                </p>
+                <p class="english">
+                    Ekdant Dayavant, Char Bhujadhari.
+                    Mathe Par Tilak Sohe, Moose Ki Sawari॥ x2
+                    (Mathe Par Sindoor Sohe, Moose Ki Sawari॥)
+                </p>
+                <p class="telugu-text">
+                    పాన్ చఢే ఫూల్ చఢే, ఔర్ చఢే మేవా।
+                    (హార్ చఢే, ఫూల్ చఢే, ఔర్ చఢే మేవా।)
+                    లడ్డుఅన్ కా భోగ్ లగే, సంత కరేం సేవా॥ x2
+                </p>
+                <p class="english">
+                    Paan Chadhe Phool Chadhe, Aur Chadhe Mewa.
+                    (Haar Chadhe, Phool Chadhe, Aur Chadhe Mewa.)
+                    Ladduan Ka Bhog Lage, Sant Karen Seva॥ x2
+                </p>
+                <p class="telugu-text">
+                    జయ గణేష్, జయ గణేష్, జయ గణేష్ దేవా।
+                    మాతా జాకీ పార్వతీ, పితా మహాదేవా॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="telugu-text">
+                    అందే కో ఆంఖ్ దేత్, కోఢిన్ కో కాయా।
+                    బాంఝన్ కో పుత్ర దేత్, నిర్ధన్ కో మాయా॥ x2
+                </p>
+                <p class="english">
+                    Andhe Ko Aankh Det, Kodhin Ko Kaya.
+                    Banjhan Ko Putra Det, Nirdhan Ko Maya॥ x2
+                </p>
+                <p class="telugu-text">
+                    'సూర్' శ్యామ్ శరణ్ ఆయే, సఫల్ కీజే సేవా।
+                    మాతా జాకీ పార్వతీ, పితా మహాదేవా॥ x2
+                    (దీనన్ కీ లాజ్ రాఖో, శంభు సుత్వారీ।
+                    కామనా కో పూర్ణ్ కరో, జగ బలిహారీ॥ x2)
+                </p>
+                <p class="english">
+                    ‘Sur’ Shyam Sharan Aaye, Safal Kije Seva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                    (Deenan Ki Laaj Rakho, Shambhu Sutwari।
+                    Kamana Ko Purn Karo, Jag Balihari॥ x2)
+                </p>
+                <p class="telugu-text">
+                    జయ గణేష్, జయ గణేష్, జయ గణేష్ దేవా।
+                    మాతా జాకీ పార్వతీ, పితా మహాదేవా॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="prayer">
+                <h3 id="telugu_ghalin_lotangan">ఘాలిన్ లోటాంగణ్</h3>
+                <p class="telugu-text">
+                    ఘాలిన్ లోటాంగణ్ వందీన్ చరణ్ ।
+                    డోళ్యాన్నీ పాహిన్ రూప్ తుఝే।
+                    ప్రేమేం ఆలింగీన్ ఆనంద్ పూజన్।
+                    భావే ఓవాళీన్ మ్హణే నామా।।
+                </p>
+                <p class="english">
+                    Ghalin Lotangan Vandeen Charan ।
+                    Dolyanni Pahin Roop Tujhe ।
+                    Premen Alingin Anand Poojan ।
+                    Bhave Ovalin Mhane Nama ।।
+                </p>
+                <p class="telugu-text">
+                    త్వమేవ మాతా పితా త్వమేవ।
+                    త్వమేవ బంధు: సఖా త్వమేవ।
+                    త్వమేవ విద్యా ద్రవిణం త్వమేవ।
+                    త్వమేవ సర్వం మమ దేవదేవ।।
+                </p>
+                <p class="english">
+                    Tvameva Mata Pita Tvameva ।
+                    Tvameva Bandhu: Sakha Tvameva ।
+                    Tvameva Vidya Dravinam Tvameva ।
+                    Tvameva Sarvam Mama Devadev ।।
+                </p>
+                <p class="telugu-text">
+                    కాయేన వాచా మనసేంద్రియైర్వా।
+                    బుద్ధ్యాత్మనా వా ప్రకృతి స్వభావాత్।
+                    కరమి యద్యత్ సకలం పరస్మై।
+                    నారాయణాయేతీ సమర్పయామి।।
+                </p>
+                <p class="english">
+                    Kayena Vacha Manasendriyarva ।
+                    Budhyatmana Va Prakriti Swabhavat ।
+                    Karami Yadyat Saklam Parsmai ।
+                    Narayanaayeti Samarpayami ।।
+                </p>
+                <p class="telugu-text">
+                    అచ్యుతం కేశవం రామ నారాయణమ్।
+                    కృష్ణదామోదరం వాసుదేవం భజే।
+                    శ్రీధరం మాధవం గోపికావల్లభమ్।
+                    జానకీనాయకం రామచంద్ర భజే।।
+                </p>
+                <p class="english">
+                    Achyutam Keshavam Ram Narayanam
+                    Krishna Damodaram Vasudevam Bhaje।
+                    Shridharam Madhavam Gopikavallabham
+                    Janakinaayakam Ramchandra Bhaje ।।
+                </p>
+                <p class="telugu-text">
+                    హరే రామ హరే రామ రామ రామ హరే హరే హరే కృష్ణ హరే కృష్ణ కృష్ణ కృష్ణ హరే హరే।।
+                </p>
+                <p class="english">
+                    Hare Ram Hare Ram Ram Ram Hare Hare Hare Krishna Hare Krishna Krishna Krishna Hare Hare ।।
+                </p>
+                <p class="telugu-text">
+                    **।। మంగలమూర్తీ మోరయా ।।**
+                </p>
+                <p class="english">
+                    **॥ Mangalmurti Morya ॥**
+                </p>
+                <p class="telugu-text">
+                    **।। గణపతిబాప్పా మోరయా ।।**
+                </p>
+                <p class="english">
+                    **॥ Ganpatibappa Morya ॥**
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="prayer">
+                <h3 id="telugu_karpur_gauram">కర్పూర గౌరం</h3>
+                <p class="telugu-text">
+                    కర్పూర గౌరం కరుణావతారం।
+                    సంసారసారం భుజగేంద్రహారం।
+                    సదావసంతం హృదయారవిందే।
+                    భవం భవానీసహితం నమామి॥
+                </p>
+                <p class="english">
+                    Karpurgauram Karunavataram
+                    Sansarasaram Bhujagendraharaṁ ।
+                    Sadavasantam Hridayaravinde
+                    Bhavam Bhavanisahitam Namami ॥
+                </p>
+                <p class="telugu-text">
+                    ఓం ఏకదంతాయ విద్ధమహే, వక్రతుండాయ ధీమహి, తన్నో దంతి ప్రచోదయాత్॥
+                </p>
+                <p class="english">
+                    Om Ekadantaya Viddhamahe, Vakratundaya Dhimahi, Tanno Danti Prachodayat॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="prayer">
+                <h3 id="telugu_mantra_pushpanjali">మంత్ర పుష్పాంజలి</h3>
+                <p class="telugu-text">
+                    ఓం యజ్ఞేన యజ్ఞమయజంత దేవాస్తాని ధర్మాణి ప్రథమాన్యాసన్ ।
+                    తే హ నాకం మహిమాన: సచంత యత్ర పూర్వే సాధ్యా: సంతి దేవా: ॥
+                </p>
+                <p class="english">
+                    Om Yajñena Yajñamayajanta Devastani Dharmani Prathamanyasan ।
+                    Te Ha Nakam Mahimanah Sachant Yatra Purve Sadhyah Santi Devah ॥
+                </p>
+                <p class="telugu-text">
+                    ఓం రాజాధిరాజాయ ప్రసహ్యసాహినే ।
+                    నమో వయం వైశ్రవణాయ కుర్మహే।
+                    స మే కామాన్ కామకామాయ మహ్యకామేశ్వరో వైశ్రవణో దదాతు ।
+                    కుబేరాయ వైశ్రవణాయ మహారాజాయ నమ:।
+                </p>
+                <p class="english">
+                    Om Rajadhirajaya Prasahyasahine ।
+                    Namo Vayam Vaishravanaya Kurmahe ।
+                    Sa Me Kaman Kamkamaya Mahyankameshvaro Vaishravano Dadatu ।
+                    Kuberaya Vaishravanaya Maharajaya Namah ।
+                </p>
+                <p class="telugu-text">
+                    ఓం స్వస్తి ।
+                    సామ్రాజ్యం భౌజ్యం స్వారాజ్యం వైరాజ్యం పారమేష్ఠ్యం రాజ్యం మహారాజ్యమాధిపత్యమయం।
+                    సమంతపర్యాఈస్యాత సార్వభౌమ: సార్వాయుష ఆంతాదాపరాద్ధాత్ ।
+                    పృథివ్యైసముద్ర పర్యంతాయా ఏకరాళితీ । తదప్యేషశ్లోకోऽభిగీతో “మరుత: పరివేష్టారో మరుత్తస్యాऽవసన్ గృహే । ఆవిక్షితస్యకామప్రేర్విశ్వేదేవా: సభాసద” ఇతి ।
+                </p>
+                <p class="english">
+                    Om Swasti ।
+                    Samrajyam Bhaujyam Swarajyam Vairajyam Parameshtyam Rajyam Maharajyamadhipatyamaya
+                    Samantaparyaisyat Sarvabhaumah Sarvayush Antadaparardhat ।
+                    Prithivyae Samudraparyantaya Ekaraliti । Tadapyeshshloko'bhigito “Marutah Pariveshtaro Maruttasya Avasan Gruhe । Avikshitasyakamaprer Vishvedevoh Sabhasad” iti ।
+                </p>
+            </div>
+        </div>
+        <div id="kannada" class="tab-content">
+            <div class="toc">
+                <h2>ವಿಷಯಸೂಚಿ</h2>
+                <ul>
+                    <li><a href="#kannada_ganesh_marathi">ಗಣಪತಿ ಆರತಿ</a></li>
+                    <li><a href="#kannada_shankar">ಶಂಕರ ಆರತಿ</a></li>
+                    <li><a href="#kannada_durga">ದುರ್ಗಾ ದೇವೀ ಆರತಿ</a></li>
+                    <li><a href="#kannada_vitthoba">ವಿಠೋಬಾ ಆರತಿ</a></li>
+                    <li><a href="#kannada_dnyanray">ಜ್ಞಾನರಾಯ ಆರತಿ</a></li>
+                    <li><a href="#kannada_ganesh_hindi">ಗಣೇಶ ಜೀ ಆರತಿ</a></li>
+                    <li><a href="#kannada_ghalin_lotangan">ಘಾಲಿನ್ ಲೋಟಂಗಣ್</a></li>
+                    <li><a href="#kannada_karpur_gauram">ಕರ್ಪೂರ ಗೌರಂ</a></li>
+                    <li><a href="#kannada_mantra_pushpanjali">ಮಂತ್ರ ಪುಷ್ಪಾಂಜಲಿ</a></li>
+                </ul>
+            </div>
+
+            <div class="aarati">
+                <h2 id="kannada_ganesh_marathi">॥ ಶ್ರೀ ಗಣಪತಿಚಿ ಆರತಿ ॥</h2>
+                <p class="kannada-text">
+                    ಸುಖಕರ್ತಾ ದುಃಖಹರ್ತಾ ವಾರ್ತಾ ವಿಘ್ನಾಚಿ।
+                    ನುರವಿ ಪುರವಿ ಪ್ರೇಮ ಕೃಪಾ ಜಯಾಚಿ।
+                    ಸರ್ವಾಂಗಿ ಸುಂದರ್ ಉಟಿ ಶೇಂದುರಾಚಿ।
+                    ಕಂಠಿ ಝಳಕೆ ಮಾಳ ಮುಕ್ತಾಫಳಾಂಚಿ॥
+                </p>
+                <p class="english">
+                    Sukhakarta Dukhharta Varta Vighnachi.
+                    Nuravi Puravi Prema Krupa Jayachi.
+                    Sarvangi Sundar Uti Shendurachi.
+                    Kanthi Jhalke Mala Muktaphalanchi॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಮಂಗಲಮೂರ್ತಿ।
+                    ದರ್ಶನಮಾತ್ರೇ ಮನಕಾಮನಾ ಪುರತಿ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="kannada-text">
+                    ರತ್ನಖಚಿತ ಫರಾ ತುಜ ಗೌರೀಕುಮರಾ।
+                    ಚಂದನಾಚಿ ಉಟಿ ಕುಂಕುಮಕೇಶರಾ।
+                    ಹಿರೇ ಜಡಿತ್ ಮುಕುಟ್ ಶೋಭತೋ ಬರ।
+                    ರುಣಝುಣತಿ ನೂಪುರೇ ಚರಣಿ ಘಾಘರಿಯಾ॥
+                </p>
+                <p class="english">
+                    Ratnakhachit Phara Tuj Gaurikumara.
+                    Chandanachi Uti Kunkumakeshara.
+                    Hire Jadit Mukut Shobhato Bara.
+                    Runjhunati Nupure Charani Ghagariya॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಮಂಗಲಮೂರ್ತಿ।
+                    ದರ್ಶನಮಾತ್ರೇ ಮನಕಾಮನಾ ಪುರತಿ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="kannada-text">
+                    ಲಂಬೋದರ ಪೀತಾಂ
+                    ಬರ ಫಣಿವರ ಬಂಧನಾ।
+                    ಸರಳ ಸೋಂಡ ವಕ್ರತುಂಡ ತ್ರಿನಯನಾ।
+                    ದಾಸ ರಾಮಾಚಾ ವಾಟ್ ಪಾಹೇ ಸದನಾ।
+                    ಸಂಕಟಿ ಪಾವಾವೇ ನಿರ್ವಾಣಿ ರಕ್ಷಾವೇ ಸುರವರವಂದನಾ॥
+                </p>
+                <p class="english">
+                    Lambodara Pitambar Phanivara Bandhana.
+                    Sarala Sond Vakratunda Trinayana.
+                    Das Ramacha Vaat Pahe Sadana.
+                    Sankati Pavave Nirvani Rakshave Suravaravandana॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಮಂಗಲಮೂರ್ತಿ।
+                    ದರ್ಶನಮಾತ್ರೇ ಮನಕಾಮನಾ ಪುರತಿ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+            </div>
+            
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="kannada_shankar">॥ ಶ್ರೀ ಶಂಕರಚಿ ಆರತಿ ॥</h2>
+                <p class="kannada-text">
+                    ಲವತವತಿ ವಿಕ್ರಾಳಾ ಬ್ರಹ್ಮಾಂಡೀ ಮಾಳಾ।
+                    ವೀಷೇ ಕಂಠ ಕಾಳಾ ತ್ರಿನೇತ್ರಿ ಜ್ವಾಳಾ।
+                    ಲಾವಣ್ಯ ಸುಂದರ್ ಮಸ್ತಕಿ ಬಾಳಾ।
+                    ತೇತುನಿಯ ಜಳ ನಿರ್ಮಳ ವಾಹೇ ಝುಳಝುಳಾ॥
+                </p>
+                <p class="english">
+                    Lavthavati Vikrala Brahmandi Mala.
+                    Vishe Kantha Kala Trinetri Jwala.
+                    Lavni Sundar Mastaki Bala.
+                    Tethuniya Jal Nirmal Vahe Zhullzhulla॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಶ್ರೀಶಂಕರಾ।
+                    ಆರತಿ ಓವಾಳೂ ತುಜ ಕರ್ಪೂರಗೌರಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="kannada-text">
+                    ಕರ್ಪೂರಗೌರಾ ಭೋಳಾ ನಯನಿ ವಿಶಾಳಾ।
+                    ಅರ್ಧಾಂಗೀ ಪಾರ್ವತೀ ಸುಮನಾಂಚ್ಯಾ ಮಾಳಾ।
+                    ವಿಭೂತಿಚೇ ಉಧಳಣ ಶಿತಿಕಂಠ ನೀಳಾ।
+                    ಐಸಾ ಶಂಕರ ಶೋಭೇ ಉಮಾವೇಲ್ಹಾಳಾ॥
+                </p>
+                <p class="english">
+                    Karpurgaura Bhola Nayani Vishala.
+                    Ardhangi Parvati Sumanancha Mala.
+                    Vibhutiche Udhalan Shitikant Neela.
+                    Aisa Shankar Shobhe Umavelhala॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಶ್ರೀಶಂಕರಾ।
+                    ಆರತಿ ಓವಾಳೂ ತುಜ ಕರ್ಪೂರಗೌರಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="kannada-text">
+                    ದೇವಿ ದೈತ್ಯೀ ಸಾಗರಮಂಥನ್ ಪೈ ಕೇಲೇಂ।
+                    ತ್ಯಾಮಾಜೀ ಅವಚಿತ್ ಹಳಾಹಳ ಜೇಂ ಉಠಿಲೇಂ।
+                    ತೇ ತ್ವಾ ಅಸುರಪಣೇ ಪ್ರاشನ್ ಕೇಲೇಂ।
+                    ನೀಲಕಂಠ್ ನಾಮ್ ಪ್ರಸಿದ್ಧ ಝಾಲೇಂ॥
+                </p>
+                <p class="english">
+                    Devi Daityi Sagarmanthan Pai Kele.
+                    Tyamaji Avachit Halahal Je Uthile.
+                    Te Tva Asurpane Prashan Kele.
+                    Neelkanth Naam Prasiddh Jhale॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಶ್ರೀಶಂಕರಾ।
+                    ಆರತಿ ಓವಾಳೂ ತುಜ ಕರ್ಪೂರಗೌರಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="kannada-text">
+                    ವ್ಯಾಘ್ರಾಂಬರ ಫಣಿವರಧರ ಸುಂದರ ಮದನಾರೀ।
+                    ಪಂಚಾನನ ಮನಮೋಹನ ಮುನಿಜನ ಸುಖಕಾರೀ।
+                    ಶತಕೋಟಿಚೇಂ ಬೀಜ ವಾಚೇ ಉಚ್ಚಾರೀ।
+                    ರಘುಕುಳತಿಲಕ್ ರಾಮದಾಸಾ ಅಂತರೀ॥
+                </p>
+                <p class="english">
+                    Vyaghrambar Phanivardhar Sundar Madanari.
+                    Panchanan Manmohan Munijan Sukhkari.
+                    Shatakotichen Beej Vache Ucchari.
+                    Raghukul Tilak Ramdasa Antari॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಶ್ರೀಶಂಕರಾ।
+                    ಆರತಿ ಓವಾಳೂ ತುಜ ಕರ್ಪೂರಗೌರಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+            </div>
+            
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="kannada_durga">॥ ಶ್ರೀ ದುರ್ಗಾ ದೇವೀಚಿ ಆರತಿ ॥</h2>
+                <p class="kannada-text">
+                    ದುರ್ಗೇ ದುರ್ಘಟ್ ಭಾರೀ ತುಜವಿಣ್ ಸಂಸಾರೀ।
+                    ಅನಾಥ ನಾಥೇ ಅಂಬೇ ಕರುಣಾ ವಿಸ್ತಾರೀ।
+                    ವಾರಿ ವಾರಿ ಜನ್ಮ ಮರಣಾಂ
+                    ತೇವಾರೀ। ಹಾರೀ ಪಡಲೋ ಆತಾ ಸಂಕಟ್ ನಿವಾರೀ॥
+                </p>
+                <p class="english">
+                    Durge Durghat Bhari Tuzvin Sansari.
+                    Anath Nathe Ambe Karuna Vistari.
+                    Vari Vari Janma Marnante Vari.
+                    Hari Padlo Ata Sankat Nivari॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವೀ ಜಯ ದೇವೀ ಮಹಿಷಾಸುರಮಥಿನೀ।
+                    ಸುರವರ ಈಶ್ವರ್ ವರದೇ ತಾರಕ್ ಸಂಜೀವನೀ॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="kannada-text">
+                    ತ್ರಿಭುವನ-ಭುವನೀ ಪಾಹತಾ ತುಜ ಏಸೀ ನಾಹೀ।
+                    ಚಾರೀ ಶ್ರಮಲೇ ಪರಂತು ನ ಬೋಲವೇ ಕಾಹೀ।
+                    ಸಾಹೀ ವಿವಾದ ಕರಿತಾ ಪಡಲೇ ಪ್ರವಾಹೀ।
+                    ತೇ ತೂ ಭಕ್ತಾಲಾಗೀ ಪಾವಸಿ ಲವಲಾಹೀ॥
+                </p>
+                <p class="english">
+                    Tribhuvan-Bhuvani Pahta Tuz Aesi Nahi.
+                    Chari Shramle Parantu Na Bolve Kahi.
+                    Sahi Vivad Karita Padle Pravahi.
+                    Te Tu Bhaktalagi Pavasi Lavlahi॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವೀ ಜಯ ದೇವೀ ಮಹಿಷಾಸುರಮಥಿನೀ।
+                    ಸುರವರ ಈಶ್ವರ್ ವರದೇ ತಾರಕ್ ಸಂಜೀವನೀ॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="kannada-text">
+                    ಪ್ರಸನ್ನ ವದನೇ ಪ್ರಸನ್ನ ಹೋಸೀ ನಿಜದಾಸಾ।
+                    ಕ್ಲೇಶಾಂ
+                    ಪಾ
+                    ಸುನಿ ಸೋಡವಿ ತೋಡೀ ಭವಪಾಶಾ।
+                    ಅಂಬೇ ತುಜವಾಚೂನ್ ಕೋಣ್ ಪುರವಿಲ್ ಆಶಾ।
+                    ನರಹರೀ ತಲ್ಲಿನ್ ಝಾಲಾ ಪದಪಂಕಜಲೇಶಾ॥
+                </p>
+                <p class="english">
+                    Prasann Vadane Prasann Hosi Nijdasa.
+                    Kleshampasuni Sodavi Todi Bhavpasha.
+                    Ambe Tuzvachun Kon Puravil Asha.
+                    Narhari Tallin Zhala Padpankajlesha॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವೀ ಜಯ ದೇವೀ ಮಹಿಷಾಸುರಮಥಿನೀ।
+                    ಸುರವರ ಈಶ್ವರ್ ವರದೇ ತಾರಕ್ ಸಂಜೀವನೀ॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+            </div>
+            
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="kannada_vitthoba">॥ ಶ್ರೀ ವಿಠೋಬಾಚೀ ಆರತಿ ॥</h2>
+                <p class="kannada-text">
+                    ಯುಗೇಂ ಅಠ್ಠಾವೀಸ ವಿಟೇವರೀ ಉಭಾ।
+                    ವಾಮಾಂಗೀ ರಖುಮಾಈ ದಿಸೇ ದಿವ್ಯ ಶೋಭಾ।
+                    ಪುಂಡಲಿಕಾಚೇ ಭೇಟೀ ಪರಬ್ರಹ್ಮ ಆಲೇಂ ಗಾ।
+                    ಚರಣೀ ವಾಹೇ ಭೀಮಾ ಉಧರೀ ಜಗ॥
+                </p>
+                <p class="english">
+                    Yuge Atthavis Vitevari Ubha.
+                    Vamangi Rakhumai Dise Divya Shobha.
+                    Pundalikache Bheti Parabrahma Alen Ga.
+                    Charani Vahe Bhima Udhari Jaga॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಪಾಂಡುರಂಗ।
+                    ರಖುಮಾಈವಲ್ಲಭಾ ರಾಈಚ್ಯಾ ವಲ್ಲಭಾ ಪಾವೇಂ ಜಿವಳಗಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="kannada-text">
+                    ತುಳಸೀಮಾಳಾ ಗಳಾಂ ಕರ್ ಠೇವೂನಿ ಕಟೀಂ।
+                    ಕಾಂಸೇ ಪೀತಾಂ
+                    ಬರ ಕಸ್ತೂರಿ ಲಲ್ಲಾಟೀ।
+                    ದೇವ ಸುರವರ ನಿತ್ಯ ಯೇತೀ ಭೇಟೀ।
+                    ಗರುಡ್ ಹನುಮಂತ ಪುಢೇ ಉಭೇ ರಾಹತೀ॥
+                </p>
+                <p class="english">
+                    Tulsi Mala Gala Kar Thevuni Katin.
+                    Kanse Pitambar Kasturi Lallati.
+                    Dev Survar Nitya Yeti Bheti.
+                    Garud Hanumant Pudhe Ubhe Rahati॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಪಾಂಡುರಂಗ।
+                    ರಖುಮಾಈವಲ್ಲಭಾ ರಾಈಚ್ಯಾ ವಲ್ಲಭಾ ಪಾವೇಂ ಜಿವಳಗಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="kannada-text">
+                    ಧನ್ಯ ವೇಣು
+                    ನಾದ್ ಅನುಕ್ಷೇತ್ರಪಾಳಾ।
+                    ಸುವರ್ಣಾಚೀ ಕಮಳೇ ವನಮಾಳಾ ಗಳಾ।
+                    ರಾಹೀ ರಖುಮಾಬಾಈ ರಾಣೀಯಾ ಸಕಳಾ।
+                    ಓವಾಳಿತೀ ರಾಜಾ ವಿಠೋಬಾ ಸಾಂವಳಾ॥
+                </p>
+                <p class="english">
+                    Dhanya Venunad Anukshetrapala.
+                    Suvarnachi Kamale Vanmala Gala.
+                    Rahi Rakhumabai Raniya Sakala.
+                    Ovaliti Raja Vithoba Sanwala॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಪಾಂಡುರಂಗ।
+                    ರಖುಮಾಈವಲ್ಲಭಾ ರಾಈಚ್ಯಾ ವಲ್ಲಭಾ ಪಾವೇಂ ಜಿವಳಗಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="kannada-text">
+                    ಓವಾಳೂಂ ಆರ್ತ್ಯಾ ಕುರ್ವಂಡ್ಯಾ ಯೇತೀ।
+                    ಚಂದ್ರಭ
+                    ಆಗೇಮಾಜೀ ಸೋಡುನಿಯಾ ದೇತೀ।
+                    ದಿಂಡ್ಯಾ ಪತಾಕಾ ವೈಷ್ಣವ ನಾಚತೀ।
+                    ಪಂಢರೀಚಾ ಮಹಿಮಾ ವರ್ಣಾವಾ ಕಿತೀ॥
+                </p>
+                <p class="english">
+                    Ovalun Aartya Kurvandiya Yeti.
+                    Chandrabhaagemaaji Soduniya Deti.
+                    Dindya Pataka Vaishnav Nachati.
+                    Pandharicha Mahima Varnava Kiti॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಪಾಂಡುರಂಗ।
+                    ರಖುಮಾಈವಲ್ಲಭಾ ರಾಈಚ್ಯಾ ವಲ್ಲಭಾ ಪಾವೇಂ ಜಿವಳಗಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="kannada-text">
+                    ಆಷಾಢೀ ಕಾರ್ತಿಕೀ ಭಕ್ತಜನ ಯೇತೀ।
+                    ಚಂದ್ರಭಾಗೇಮಾಜೀ ಸ್ನಾನೇ ಜೇ ಕರತೀ।
+                    ದರ್ಶನಹೇಳಾಮಾತ್ರೇಂ ತಯಾಂ ಹೋಯ ಮುಕ್ತಿ।
+                    ಕೇಶವಾಸೀ ನಾಮದೇ
+                    ವ್ ಭಾವೇ ಓಂವಾಳಿತೀ॥
+                </p>
+                <p class="english">
+                    Aashadhi Kartiki Bhaktajan Yeti.
+                    Chandrabhaagemaaji Snane Je Kariti.
+                    Darshanhelamatre Tyan Hoy Mukti.
+                    Keshavasi Namdev Bhave Ovaliti॥
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ದೇವ ಜಯ ದೇವ ಜಯ ಪಾಂಡುರಂಗ।
+                    ರಖುಮಾಈವಲ್ಲಭಾ ರಾಈಚ್ಯಾ ವಲ್ಲಭಾ ಪಾವೇಂ ಜಿವಳಗಾ॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+            </div>
+
+            <div class="separator">ॐ</div>
+
+            <div class="aarati">
+                <h2 id="kannada_dnyanray">॥ ಆರತಿ ಜ್ಞಾನರಾಯಾಚೀ ॥</h2>
+                <p class="kannada-text">
+                    ಆರತಿ ಜ್ಞಾನರಾಜಾ ।। ಮಹಾಕೈವಲ್ಯತೇಜಾ।
+                    ಸೇವಿತೀ ಸಾಧುಸಂತ । ಮನು ವೇಧಲಾ ಮಾಜಾ ॥।ಧ್ರು೦ ॥।
+                </p>
+                <p class="english">
+                    Aarti Jnanaraja ॥ Mahakaivalyateja ॥
+                    Seviti Sadhusant । Manu Vedhala Majha ॥। Dhru ॥।
+                </p>
+                <p class="kannada-text">
+                    ಲೋಪಲೇಂ ಜ್ಞಾನ ಜಗೀಂ। ಹಿತ ನೇಣತೀ ಕೋಣೀ।
+                    ಅವತಾರ್ ಪಾಂಡುರಂಗ । ನಾಮ್ ಠೇವಿಲೇಂ ಜ್ಞಾನೀ ॥।1॥
+                </p>
+                <p class="english">
+                    Lopale Gyan Jagin । Hit Nenti Koni ।
+                    Avatar Pandurang । Naam Thevile Gnyani ॥।1॥
+                </p>
+                <p class="kannada-text">
+                    ಕನಕಾಚೇ ತಾಟ್ ಕರೀಂ । ಉಭ್ಯಾ ಗೋಪಿಕ ನಾರೀ।
+                    ನಾರ
+                    ದ ತುಂ
+                    ಬರಹೋ । ಸಾಮಗಾಯನ ಕರೀ ॥2॥
+                </p>
+                <p class="english">
+                    Kanakache Tat Karin । Ubhya Gopika Nari ।
+                    Narad Tumbarho । Samgayan Kari ॥2॥
+                </p>
+                <p class="kannada-text">
+                    ಪ್ರಗಟಗುಹ್ಯ ಬೋಲೇ । ವಿಶ್ವ ಬ್ರಹ್ಮಚಿ ಕೇಲೇ।
+                    ರಾಮಜನಾರ್
+                    ದನೀ । ಪಾಯೀ ಮಸ್ತಕ ಠೇವಿಲೇಂ ॥।3॥
+                </p>
+                <p class="english">
+                    Pragatguhya Bole । Vishva Brahmachi Kele ।
+                    Ramjanardani । Payi Mastak Thevile ॥।3॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="aarati">
+                <h2 id="kannada_ganesh_hindi">॥ ಶ್ರೀ ಗಣೇಶ ಜೀ ಕೀ ಆರತಿ ॥</h2>
+                <p class="kannada-text">
+                    ಜಯ ಗಣೇಶ, ಜಯ ಗಣೇಶ, ಜಯ ಗಣೇಶ ದೇವಾ।
+                    ಮಾತಾ ಜಾಕೀ ಪಾರ್ವತೀ, ಪಿತಾ ಮಹಾದೇವಾ॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="kannada-text">
+                    ಏಕದಂತ ದಯಾವಂತ, ಚಾರ್ ಭುಜಾಧಾರೀ।
+                    ಮಾಥೇ ಪರ್ ತಿಲಕ್ ಸೋಹೇ, ಮೂಸೇ ಕೀ ಸವಾರೀ॥ x2
+                    (ಮಾಥೇ ಪರ್ ಸಿಂದೂರ್ ಸೋಹೇ, ಮೂಸೇ ಕೀ ಸವಾರೀ॥)
+                </p>
+                <p class="english">
+                    Ekdant Dayavant, Char Bhujadhari.
+                    Mathe Par Tilak Sohe, Moose Ki Sawari॥ x2
+                    (Mathe Par Sindoor Sohe, Moose Ki Sawari॥)
+                </p>
+                <p class="kannada-text">
+                    ಪಾನ್ ಚಢೇ ಫೂಲ್ ಚಢೇ, ಔರ್ ಚಢೇ ಮೇವಾ।
+                    (ಹಾರ್ ಚಢೇ, ಫೂಲ್ ಚಢೇ, ಔರ್ ಚಢೇ ಮೇವಾ।)
+                    ಲಡ್ಡೂಅನ್ ಕಾ ಭೋಗ್ ಲಗೇ, ಸಂತ ಕರೇಂ ಸೇವಾ॥ x2
+                </p>
+                <p class="english">
+                    Paan Chadhe Phool Chadhe, Aur Chadhe Mewa.
+                    (Haar Chadhe, Phool Chadhe, Aur Chadhe Mewa.)
+                    Ladduan Ka Bhog Lage, Sant Karen Seva॥ x2
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ಗಣೇಶ, ಜಯ ಗಣೇಶ, ಜಯ ಗಣೇಶ ದೇವಾ।
+                    ಮಾತಾ ಜಾಕೀ ಪಾರ್ವತೀ, ಪಿತಾ ಮಹಾದೇವಾ॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="kannada-text">
+                    ಅಂದೇ ಕೋ ಆಂಖ್ ದೇತ್, ಕೋಢಿನ್ ಕೋ ಕಾಯಾ।
+                    ಬಾಂ
+                    ಝನ್ ಕೋ ಪುತ್ರ ದೇತ್, ನಿರ್ಧನ್ ಕೋ ಮಾಯಾ॥ x2
+                </p>
+                <p class="english">
+                    Andhe Ko Aankh Det, Kodhin Ko Kaya.
+                    Banjhan Ko Putra Det, Nirdhan Ko Maya॥ x2
+                </p>
+                <p class="kannada-text">
+                    'ಸೂರ್' ಶ್ಯಾಮ್ ಶರಣ್ ಆಯೇ, ಸಫಲ್ ಕೀಜೇ ಸೇವಾ।
+                    ಮಾತಾ ಜಾಕೀ ಪಾರ್ವತೀ, ಪಿತಾ ಮಹಾದೇವಾ॥ x2
+                    (ದೀನನ್ ಕೀ ಲಾಜ್ ರಾಖೋ, ಶಂಭು ಸುತ್ವಾರಿ।
+                    ಕಾಮನಾ ಕೋ ಪೂರ್ಣ ಕರೋ, ಜಗ ಬಲಿಹಾರೀ॥ x2)
+                </p>
+                <p class="english">
+                    ‘Sur’ Shyam Sharan Aaye, Safal Kije Seva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                    (Deenan Ki Laaj Rakho, Shambhu Sutwari।
+                    Kamana Ko Purn Karo, Jag Balihari॥ x2)
+                </p>
+                <p class="kannada-text">
+                    ಜಯ ಗಣೇಶ, ಜಯ ಗಣೇಶ, ಜಯ ಗಣೇಶ ದೇವಾ।
+                    ಮಾತಾ ಜಾಕೀ ಪಾರ್ವತೀ, ಪಿತಾ ಮಹಾದೇವಾ॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="prayer">
+                <h3 id="kannada_ghalin_lotangan">ಘಾಲಿನ್ ಲೋಟಂಗಣ್</h3>
+                <p class="kannada-text">
+                    ಘಾಲಿನ್ ಲೋಟಂಗಣ್ ವಂದೀನ್ ಚರಣ್।
+                    ಡೋಳ್ಯಾ
+                    ನ್ನೀ ಪಾಹಿನ್ ರೂಪ್ ತುಝೇ।
+                    ಪ್ರೇಮೇಂ ಆಲಿಂಗೀನ್ ಆನಂದ ಪೂಜನ್।
+                    ಭಾವೇ ಓವಾಳೀನ್ ಮ್ಹಣೇ ನಾಮಾ।।
+                </p>
+                <p class="english">
+                    Ghalin Lotangan Vandeen Charan ।
+                    Dolyanni Pahin Roop Tujhe ।
+                    Premen Alingin Anand Poojan ।
+                    Bhave Ovalin Mhane Nama ।।
+                </p>
+                <p class="kannada-text">
+                    ತ್ವಮೇವ ಮಾತಾ ಪಿತಾ ತ್ವಮೇವ।
+                    ತ್ವಮೇವ ಬಂಧು: ಸಖಾ ತ್ವಮೇವ।
+                    ತ್ವಮೇವ ವಿದ್ಯಾ ದ್ರವಿಣಂ ತ್ವಮೇವ।
+                    ತ್ವಮೇವ ಸರ್ವಂ ಮಮ ದೇವದೇವ।।
+                </p>
+                <p class="english">
+                    Tvameva Mata Pita Tvameva ।
+                    Tvameva Bandhu: Sakha Tvameva ।
+                    Tvameva Vidya Dravinam Tvameva ।
+                    Tvameva Sarvam Mama Devadev ।।
+                </p>
+                <p class="kannada-text">
+                    ಕಾಯೇನ ವಾಚಾ ಮನಸೇಂದ್ರಿಯೈರ್ವಾ।
+                    ಬುಧ್ಯಾತ್ಮನಾ ವಾ ಪ್ರಕೃತಿ ಸ್ವಭಾವಾತ್।
+                    ಕರಮಿ ಯದ್ಯತ್ ಸಕಲಂ ಪರಸ್ಮೈ।
+                    ನಾರಾಯಣಾಯೇತೀ ಸಮರ್ಪಯಾಮಿ।।
+                </p>
+                <p class="english">
+                    Kayena Vacha Manasendriyarva ।
+                    Budhyatmana Va Prakriti Swabhavat ।
+                    Karami Yadyat Saklam Parsmai ।
+                    Narayanaayeti Samarpayami ।।
+                </p>
+                <p class="kannada-text">
+                    ಅಚ್ಯುತಂ ಕೇಶವಂ ರಾಮ ನಾರಾಯಣಮ್।
+                    ಕೃಷ್ಣದಾಮೋದರಂ ವಾಸುದೇವಂ ಭಜೇ।
+                    ಶ್ರೀಧರಂ ಮಾಧವಂ ಗೋಪಿಕಾವಲ್ಲಭಮ್।
+                    ಜಾನಕೀ
+                    ನಾಯಕಂ ರಾಮಚಂದ್ರ ಭಜೇ।।
+                </p>
+                <p class="english">
+                    Achyutam Keshavam Ram Narayanam
+                    Krishna Damodaram Vasudevam Bhaje।
+                    Shridharam Madhavam Gopikavallabham
+                    Janakinaayakam Ramchandra Bhaje ।।
+                </p>
+                <p class="kannada-text">
+                    ಹರೇ ರಾಮ ಹರೇ ರಾಮ ರಾಮ ರಾಮ ಹರೇ ಹರೇ। ಹರೇ ಕೃಷ್ಣ ಹರೇ ಕೃಷ್ಣ ಕೃಷ್ಣ ಕೃಷ್ಣ ಹರೇ ಹರೇ।।
+                </p>
+                <p class="english">
+                    Hare Ram Hare Ram Ram Ram Hare Hare Hare Krishna Hare Krishna Krishna Krishna Hare Hare ।।
+                </p>
+                <p class="kannada-text">
+                    **।। ಮಂಗಲಮೂರ್ತೀ ಮೋರಯಾ ।।**
+                </p>
+                <p class="english">
+                    **॥ Mangalmurti Morya ॥**
+                </p>
+                <p class="kannada-text">
+                    **।। ಗಣಪತಿಬಾಪ್ಪಾ ಮೋರಯಾ ।।**
+                </p>
+                <p class="english">
+                    **॥ Ganpatibappa Morya ॥**
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="prayer">
+                <h3 id="kannada_karpur_gauram">ಕರ್ಪೂರ ಗೌರಂ</h3>
+                <p class="kannada-text">
+                    ಕರ್ಪೂರ ಗೌರಂ ಕರುಣಾವತಾರಂ।
+                    ಸಂಸಾರಸಾರಂ ಭುಜಗೇಂದ್ರಹಾರಂ।
+                    ಸದಾವಸಂತಂ ಹೃ
+                    ದಯಾರವಿ
+                    ಂದೇ।
+                    ಭವಂ ಭವಾನೀಸಹಿತಂ ನಮಾಮಿ॥
+                </p>
+                <p class="english">
+                    Karpurgauram Karunavataram
+                    Sansarasaram Bhujagendraharaṁ ।
+                    Sadavasantam Hridayaravinde
+                    Bhavam Bhavanisahitam Namami ॥
+                </p>
+                <p class="kannada-text">
+                    ಓಂ ಏಕದಂತಾಯ ವಿದ್ಧಮಹೇ, ವಕ್ರತುಂಡಾಯ ಧೀಮಹಿ, ತನ್ನೋ ದಂತಿ ಪ್ರಚೋ
+                    ದ
+                    ಯಾತ್॥
+                </p>
+                <p class="english">
+                    Om Ekadantaya Viddhamahe, Vakratundaya Dhimahi, Tanno Danti Prachodayat॥
+                </p>
+            </div>
+            <div class="separator">ॐ</div>
+            <div class="prayer">
+                <h3 id="kannada_mantra_pushpanjali">ಮಂತ್ರ ಪುಷ್ಪಾಂಜಲಿ</h3>
+                <p class="kannada-text">
+                    ಓಂ ಯಜ್ಞೇನ ಯಜ್ಞಮಯಜಂತ ದೇವಾಸ್ತಾನಿ ಧರ್ಮಾಣಿ ಪ್ರಥಮಾನ್ಯಾ
+                    ಸನ್ ।
+                    ತೇ ಹ ನಾಕಂ ಮಹಿಮಾನ: ಸಚಂತ ಯತ್ರ ಪೂರ್ವೇ ಸಾಧ್ಯಾ: ಸಂ
+                    ತಿ ದೇವಾ: ॥
+                </p>
+                <p class="english">
+                    Om Yajñena Yajñamayajanta Devastani Dharmani Prathamanyasan ।
+                    Te Ha Nakam Mahimanah Sachant Yatra Purve Sadhyah Santi Devah ॥
+                </p>
+                <p class="kannada-text">
+                    ಓಂ ರಾಜಾಧಿರಾಜಾಯ ಪ್ರಸಹ್ಯಸಾಹಿನೇ।
+                    ನಮೋ ವಯಂ ವೈಶ್ರವಣಾಯ ಕುರ್ಮಹೇ।
+                    ಸ ಮೇ ಕಾಮಾನ್ ಕಾಮಕಾಮಾಯ ಮಹ್ಯಂ
+                    ಕಾಮೇಶ್ವರೋ ವೈಶ್ರವಣೋ ದದಾತ
+                    ು।
+                    ಕುಬೇರಾಯ ವೈಶ್ರವಣಾಯ ಮಹಾರಾಜಾಯ ನಮ:।
+                </p>
+                <p class="english">
+                    Om Rajadhirajaya Prasahyasahine ।
+                    Namo Vayam Vaishravanaya Kurmahe ।
+                    Sa Me Kaman Kamkamaya Mahyankameshvaro Vaishravano Dadatu ।
+                    Kuberaya Vaishravanaya Maharajaya Namah ।
+                </p>
+                <p class="kannada-text">
+                    ಓಂ ಸ್ವಸ್ತಿ ।
+                    ಸಾಮ್ರಾಜ್ಯಂ ಭೌಜ
+                    ್ಯಂ ಸ್ವರಾಜ್ಯಂ ವೈರಾಜ್ಯಂ ಪಾರಮೇಶ್ಠ್ಯಂ ರಾಜ್ಯಂ ಮಹಾರಾಜ್ಯಮಾಧಿಪತ್ಯಮಯಂ।
+                    ಸಮಂತಪರ್ಯಾಯೀಸ್ಯಾತ್ ಸಾರ್ವಭೌಮ: ಸಾರ್ವಾಯುಷ ಆಂತಾದಾಪರಾ
+                    ದ್ಧಾತ್।
+                    ಪೃಥಿವ್ಯೈ
+                    ಸಮುದ್ರ ಪರ್ಯಂತಾಯಾ ಏಕರಾಳಿತಿ। ತದಪ್ಯೇಷಶ್ಲೋಕೋ
+                    ऽ
+                    ಭಿಗೀ
+                    ತೋ “ಮರುತ: ಪರಿವೇಷ್ಟಾರೋ ಮರುತ್ತಸ್ಯ
+                    ऽ
+                    ವಸನ್ ಗೃಹೇ। ಆವಿಕ್ಷಿತಸ್ಯಕಾಮಪ್ರೇರ್ವಿ
+                    ಶ್ವೇ
+                    ದೇವಾ: ಸಭಾಸದ” ಇತಿ।
+                </p>
+                <p class="english">
+                    Om Swasti ।
+                    Samrajyam Bhaujyam Swarajyam Vairajyam Parameshtyam Rajyam Maharajyamadhipatyamaya
+                    Samantaparyaisyat Sarvabhaumah Sarvayush Antadaparardhat ।
+                    Prithivyae Samudraparyantaya Ekaraliti । Tadapyeshshloko'bhigito “Marutah Pariveshtaro Maruttasya Avasan Gruhe । Avikshitasyakamaprer Vishvedevoh Sabhasad” iti ।
+                </p>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 20px; color: #5d4037;">
+        <p style="font-size: 1.4em; font-weight: 700;">।। मंगलमुर्ती मोरया ।।</p>
+        <p style="font-style: italic; color: #9c6c44; margin-top: 5px;">॥ Mangalmurti Morya ॥</p>
+        <p style="font-size: 1.4em; font-weight: 700; margin-top: 20px;">।। गणपतिबाप्पा मोरया ।।</p>
+        <p style="font-style: italic; color: #9c6c44; margin-top: 5px;">॥ Ganpatibappa Morya ॥</p>
+    </div>
+    <footer style="text-align: center; margin-top: 20px;">
+        <p><b>Created by: Ajay Kanse</b></p>
+    </footer>
+    <script>
+        function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            var buttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
